@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6"/>
+      <stop offset="25%" stop-color="#E8C766"/>
+      <stop offset="50%" stop-color="#B8860B"/>
+      <stop offset="75%" stop-color="#DFBA52"/>
+      <stop offset="100%" stop-color="#8C6510"/>
+    </linearGradient>
+    <radialGradient id="sealCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#24211A"/>
+      <stop offset="70%" stop-color="#141312"/>
+      <stop offset="100%" stop-color="#0A0A0B"/>
+    </radialGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#D4AF37" flood-opacity="0.35"/>
+    </filter>
+    <path id="circlePathUpper" d="M 30,120 A 90,90 0 0,1 210,120" />
+    <path id="circlePathLower" d="M 210,120 A 90,90 0 0,1 30,120" />
+  </defs>
+
+  <!-- Outer Starburst / Rosette Rim -->
+  <g filter="url(#softGlow)">
+    <circle cx="120" cy="120" r="110" fill="#141416" stroke="url(#goldGradient)" stroke-width="2"/>
+    <circle cx="120" cy="120" r="102" fill="url(#sealCenter)" stroke="#D4AF37" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="120" cy="120" r="76" stroke="url(#goldGradient)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Circular Text -->
+  <text font-family="'Cinzel', Georgia, serif" font-size="11.5" font-weight="700" fill="url(#goldGradient)" letter-spacing="3.2">
+    <textPath href="#circlePathUpper" startOffset="50%" text-anchor="middle">
+      GARANTÍA ESCRITA
+    </textPath>
+  </text>
+  
+  <text font-family="'Cinzel', Georgia, serif" font-size="10.5" font-weight="600" fill="url(#goldGradient)" letter-spacing="2.8">
+    <textPath href="#circlePathLower" startOffset="50%" text-anchor="middle">
+      HASTA 60 DÍAS DE REPOSICIÓN
+    </textPath>
+  </text>
+
+  <!-- Decorative Stars on Equator -->
+  <polygon points="26,120 28,116 32,116 29,119 30,123 26,121 22,123 23,119 20,116 24,116" fill="#D4AF37"/>
+  <polygon points="214,120 216,116 220,116 217,119 218,123 214,121 210,123 211,119 208,116 212,116" fill="#D4AF37"/>
+
+  <!-- Center Emblem -->
+  <g transform="translate(120, 116)">
+    <!-- Crown -->
+    <path d="M -18,-24 L -12,-16 L 0,-28 L 12,-16 L 18,-24 L 14,-10 L -14,-10 Z" fill="url(#goldGradient)"/>
+    <circle cx="-18" cy="-25" r="1.5" fill="#FFF"/>
+    <circle cx="0" cy="-30" r="2" fill="#FFF"/>
+    <circle cx="18" cy="-25" r="1.5" fill="#FFF"/>
+    
+    <!-- Central Value -->
+    <text x="0" y="8" font-family="'Cinzel', Georgia, serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">100%</text>
+    
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="url(#goldGradient)" text-anchor="middle" letter-spacing="2.5">RESPALDO LEGAL</text>
+  </g>
+</svg>

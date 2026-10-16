@@ -1,0 +1,404 @@
+/* ==========================================================================
+   MÓNICA BRIDGES - LUXURY RECRUITMENT STYLESHEET
+   Brand: Mónica Bridges | Luxury Cleaning Personnel Recruitment
+   Aesthetics: Luxury, Discretion & High-End Corporate
+   ========================================================================== */
+
+:root {
+  --color-bg-main: #0B0B0B;
+  --color-bg-card: #18181B;
+  --color-bg-elevated: #1F1F23;
+  --color-bg-subtle: #121215;
+  
+  --gold-300: #F3E5AB;
+  --gold-400: #E5C365;
+  --gold-500: #D4AF37;
+  --gold-600: #AA7A1E;
+  --gold-700: #7A5612;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --gold-gradient: linear-gradient(135deg, #FFF6D6 0%, #D4AF37 45%, #AA7A1E 85%, #F3E5AB 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(212,175,55,0.2) 0%, rgba(243,229,171,0.05) 50%, rgba(170,122,30,0.15) 100%);
+  --gold-border-gradient: linear-gradient(135deg, rgba(243,229,171,0.7) 0%, rgba(212,175,55,0.3) 40%, rgba(170,122,30,0.6) 100%);
+  
+  --shadow-gold-subtle: 0 4px 25px -4px rgba(212, 175, 55, 0.18);
+  --shadow-gold-strong: 0 10px 40px -5px rgba(212, 175, 55, 0.35);
+  --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+/* Base Reset & Global Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-600);
+}
+
+/* Selection Color */
+::selection {
+  background-color: rgba(212, 175, 55, 0.3);
+  color: #FFF6D6;
+}
+
+/* Font Classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+.font-sans-luxury {
+  font-family: var(--font-sans);
+}
+
+/* Luxury Metallic Gold Text */
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.text-gold-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+}
+
+/* Glassmorphism Classes */
+.glass-navbar {
+  background: rgba(11, 11, 11, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-navbar.scrolled {
+  background: rgba(11, 11, 11, 0.92);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.glass-card {
+  background: rgba(24, 24, 27, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-card);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: var(--shadow-gold-subtle), var(--shadow-card);
+  transform: translateY(-4px);
+}
+
+/* Luxury Gold Border Container (gradient border illusion) */
+.luxury-border-box {
+  position: relative;
+  background: #18181B;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.luxury-border-box::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(1rem + 1px);
+  padding: 1px;
+  background: var(--gold-border-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+/* Ambient Radial Glows */
+.ambient-glow-gold {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.ambient-glow-subtle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+/* Luxury Interactive Buttons */
+.btn-gold {
+  position: relative;
+  background: linear-gradient(135deg, #E5C365 0%, #D4AF37 50%, #B88924 100%);
+  color: #0B0B0B;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 245, 214, 0.6);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.btn-gold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+}
+
+.btn-gold:hover::before {
+  left: 150%;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.55);
+  transform: translateY(-2px);
+  color: #000;
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-outline-gold {
+  position: relative;
+  background: rgba(24, 24, 27, 0.6);
+  color: #F3E5AB;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: #D4AF37;
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Badge Styles */
+.badge-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(24, 24, 27, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #F3E5AB;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.badge-trust:hover {
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Floating WhatsApp luxury button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #18181B;
+  border: 1.5px solid #25D366;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(37, 211, 102, 0.3);
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+  background: #25D366;
+  color: #0B0B0B;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+}
+
+.floating-whatsapp .pulse-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+.floating-whatsapp:hover .pulse-dot {
+  background-color: #0B0B0B;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  background: rgba(8, 8, 10, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Service Card Hover Gold Line */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold-gradient);
+  transition: width 0.4s ease;
+}
+
+.service-card:hover::after {
+  width: 100%;
+}
+
+/* Wizard Steps Indicator */
+.wizard-step-pill.active {
+  background: var(--gold-gradient);
+  color: #0B0B0B;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.wizard-step-pill.completed {
+  border-color: #D4AF37;
+  color: #F3E5AB;
+}
+
+/* Accordion Smooth Expand */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+  color: #D4AF37;
+}
+
+/* Hero Background Image Treatment */
+.hero-bg-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 11, 11, 0.65) 0%,
+    rgba(11, 11, 11, 0.82) 40%,
+    rgba(11, 11, 11, 0.98) 85%,
+    #0B0B0B 100%
+  );
+}
+
+/* Subtle Gold Divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+}
+
+/* Custom Notification Toast */
+#toast-notification {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}

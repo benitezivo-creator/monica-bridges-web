@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mónica Bridges | Reclutamiento de Personal de Limpieza de Lujo</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Reclutamiento exclusivo de personal de limpieza de alta gama para residencias privadas y empresas. 100% bajo contrato formal, acuerdos de confidencialidad NDA y garantía escrita de reposición de hasta 60 días.">
+  <meta name="keywords" content="Mónica Bridges, personal de limpieza de lujo, reclutamiento residencial alta gama, personal doméstico vip, limpieza oficinas corporativas, contrato formal, acuerdo NDA confidencialidad, garantía 60 días">
+  <meta name="author" content="Mónica Bridges">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mónica Bridges | Reclutamiento de Personal de Limpieza de Lujo">
+  <meta property="og:description" content="Selección rigurosa de personal de limpieza para residencias privadas y corporativos. Respaldo legal, acuerdos de confidencialidad (NDA) y garantía escrita.">
+  <meta property="og:image" content="assets/hero-luxury.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            night: '#0B0B0B',
+            anthracite: '#18181B',
+            darkElevated: '#1F1F23',
+            gold: {
+              100: '#FFF9E6',
+              200: '#F9F1D8',
+              300: '#F3E5AB',
+              400: '#E5C365',
+              500: '#D4AF37',
+              600: '#AA7A1E',
+              700: '#7A5612',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#0B0B0B] text-zinc-100 antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- =========================================================================
+       1. NAVBAR FLOTANTE (GLASSMORPHISM)
+       ========================================================================= -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 glass-navbar py-3.5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Brand Logo / Monogram -->
+        <a href="#inicio" class="flex items-center gap-3 group focus:outline-none" aria-label="Mónica Bridges Inicio">
+          <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-amber-400/40 flex items-center justify-center p-1.5 shadow-lg group-hover:border-amber-400 transition-colors">
+            <img src="assets/favicon.svg" alt="MB" class="w-full h-full object-contain">
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif-luxury font-bold text-lg sm:text-xl tracking-[0.18em] text-gold-gradient">
+              MÓNICA BRIDGES
+            </span>
+            <span class="text-[9px] uppercase tracking-[0.22em] text-zinc-400 font-medium">
+              Reclutamiento de Alta Gama
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-zinc-300">
+          <a href="#inicio" class="hover:text-amber-300 transition-colors">Inicio</a>
+          <a href="#servicios" class="hover:text-amber-300 transition-colors">Servicios</a>
+          <a href="#garantias" class="hover:text-amber-300 transition-colors">Confidencialidad & Garantía</a>
+          <a href="#cotizador" class="hover:text-amber-300 transition-colors">Cotizador</a>
+          <a href="#candidatas" class="hover:text-amber-300 transition-colors">Candidatas</a>
+          <a href="#faq" class="hover:text-amber-300 transition-colors">Preguntas</a>
+          <a href="#contacto" class="hover:text-amber-300 transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Navbar CTA Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button data-open-candidate-modal class="text-xs font-semibold text-zinc-400 hover:text-amber-300 px-3 py-2 transition-colors">
+            Postulaciones
+          </button>
+          <a href="#cotizador" class="btn-gold px-4 py-2.5 rounded-full text-xs font-bold tracking-wider shadow-lg">
+            <span>Solicitar Personal</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-toggle" type="button" class="lg:hidden p-2 rounded-lg text-zinc-300 hover:text-amber-300 hover:bg-zinc-800 focus:outline-none" aria-label="Abrir Menú">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-3 border-t border-zinc-800 mt-3 flex flex-col gap-3">
+        <a href="#inicio" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Inicio</a>
+        <a href="#servicios" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Servicios de Selección</a>
+        <a href="#garantias" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Confidencialidad (NDA) & Garantías</a>
+        <a href="#cotizador" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Cotizador Interactivo</a>
+        <a href="#candidatas" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Trabajá con Nosotros</a>
+        <a href="#faq" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Preguntas Frecuentes</a>
+        <a href="#contacto" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Contacto Directo</a>
+        
+        <div class="pt-3 border-t border-zinc-800/80 flex flex-col gap-2.5">
+          <a href="#cotizador" class="btn-gold w-full py-2.5 rounded-xl text-center text-xs font-bold">
+            Solicitar Personal Ahora
+          </a>
+          <button data-open-candidate-modal class="btn-outline-gold w-full py-2.5 rounded-xl text-center text-xs font-semibold">
+            Postularme como Personal
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION (ALTO IMPACTO VISUAL & LUXURY BRANDING)
+       ========================================================================= -->
+  <section id="inicio" class="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
+    
+    <!-- Background Image with Ambient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/hero-luxury.jpg" alt="Interior Residencial de Lujo" class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-105 scale-100 animate-fade">
+      <div class="absolute inset-0 hero-bg-overlay"></div>
+    </div>
+
+    <!-- Ambient Gold Glow Orbs -->
+    <div class="ambient-glow-gold top-1/4 left-1/2 -translate-x-1/2 opacity-60"></div>
+    <div class="ambient-glow-gold bottom-10 right-10 opacity-30"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Crown Top Accent -->
+      <div class="inline-flex items-center justify-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-amber-400/40 text-amber-300 text-xs font-semibold tracking-widest uppercase shadow-xl">
+        <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-400"></i>
+        <span>Estándar Internacional de Reclutamiento</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-serif-luxury text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.18] sm:leading-[1.15]">
+        Reclutamiento Exclusivo de <br class="hidden sm:inline">
+        <span class="text-gold-gradient">Personal de Limpieza</span> <br class="hidden sm:inline">
+        para Casas Particulares y Empresas
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-base sm:text-lg lg:text-xl text-zinc-300 max-w-3xl mx-auto font-normal leading-relaxed">
+        Selección rigurosa de perfiles de alta confianza, acuerdos vinculantes de <strong class="text-white font-semibold">confidencialidad (NDA)</strong>, <strong class="text-white font-semibold">contratación 100% formal</strong> y <strong class="text-amber-300 font-semibold">garantía escrita de reposición de hasta 60 días</strong>.
+      </p>
+
+      <!-- Trust Badges Strip -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 max-w-4xl mx-auto">
+        <div class="badge-trust">
+          <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
+          <span>100% Bajo Contrato</span>
+        </div>
+        <div class="badge-trust">
+          <i data-lucide="lock" class="w-4 h-4 text-amber-400"></i>
+          <span>Acuerdo NDA Firmado</span>
+        </div>
+        <div class="badge-trust">
+          <i data-lucide="home" class="w-4 h-4 text-amber-400"></i>
+          <span>30 Días Garantía Residencial</span>
+        </div>
+        <div class="badge-trust">
+          <i data-lucide="building-2" class="w-4 h-4 text-amber-400"></i>
+          <span>60 Días Garantía Empresas</span>
+        </div>
+      </div>
+
+      <!-- Hero Call To Actions -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#cotizador" class="btn-gold w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold tracking-wider shadow-2xl">
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+          <span>Cotizar Servicio</span>
+        </a>
+        <button data-open-candidate-modal class="btn-outline-gold w-full sm:w-auto px-7 py-4 rounded-xl text-sm font-semibold tracking-wide">
+          <i data-lucide="briefcase" class="w-4 h-4"></i>
+          <span>Postularse como Personal</span>
+        </button>
+      </div>
+
+      <!-- Transparency Scope Tagline -->
+      <p class="mt-8 text-xs text-zinc-400 max-w-2xl mx-auto italic flex items-center justify-center gap-1.5">
+        <i data-lucide="info" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i>
+        <span>Especialistas en selección y provisión de talento calificado. Los insumos de limpieza son provistos por el cliente en sus instalaciones.</span>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Metrics / Value Pillars Ribbon -->
+  <section class="border-y border-zinc-800/80 bg-zinc-950/70 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-zinc-800/80 text-center">
+        <div class="px-4 pt-4 md:pt-0">
+          <span class="font-serif-luxury text-3xl lg:text-4xl font-bold text-gold-gradient block">100%</span>
+          <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mt-1 block">Personal Verificado</span>
+          <p class="text-xs text-zinc-400 mt-1 max-w-xs mx-auto">Antecedentes penales chequeados, DNI validado y referencias laborales cruzadas comprobables.</p>
+        </div>
+        <div class="px-4 pt-4 md:pt-0">
+          <span class="font-serif-luxury text-3xl lg:text-4xl font-bold text-gold-gradient block">0%</span>
+          <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mt-1 block">Riesgo & Máxima Legalidad</span>
+          <p class="text-xs text-zinc-400 mt-1 max-w-xs mx-auto">Asesoramiento integral para contratación bajo estricto marco legal, aportes y transparencia.</p>
+        </div>
+        <div class="px-4 pt-4 md:pt-0">
+          <span class="font-serif-luxury text-3xl lg:text-4xl font-bold text-gold-gradient block">24 / 48 hs</span>
+          <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mt-1 block">Respuesta Selectiva</span>
+          <p class="text-xs text-zinc-400 mt-1 max-w-xs mx-auto">Presentación ágil de ternas preseleccionadas acordes al perfil y exigencias de su inmueble.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. MÓDULO DE SERVICIOS INTERACTIVOS (TARJETAS CON HOVER GOLD)
+       ========================================================================= -->
+  <section id="servicios" class="py-24 relative bg-[#0B0B0B]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-widest uppercase mb-3">
+          <span>Excelencia en el Reclutamiento</span>
+        </div>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Nuestros Pilares de <span class="text-gold-gradient">Selección Premium</span>
+        </h2>
+        <p class="mt-4 text-zinc-400 text-sm sm:text-base leading-relaxed">
+          No enviamos personal al azar. Cada postulante atraviesa un riguroso embudo de evaluación técnica, psicológica, de referencias y antecedentes para asegurar la máxima distinción.
+        </p>
+      </div>
+
+      <!-- 4 Pillars Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="glass-card service-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-5 shadow-lg">
+              <i data-lucide="user-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif-luxury text-xl font-bold text-white mb-3">Selección Exhaustiva</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Perfiles evaluados bajo estrictos estándares de pulcritud, cortesía, presencia, discreción y protocolo en residencias y oficinas ejecutivas.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800 text-[11px] font-semibold text-amber-300/90 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Test psicotécnico y vocacional</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card service-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-5 shadow-lg">
+              <i data-lucide="file-shield" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif-luxury text-xl font-bold text-white mb-3">Validación Rigurosa</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Chequeo integral de antecedentes penales actualizados, comprobación biométrica de identidad y verificación telefónica de referencias laborales reales.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800 text-[11px] font-semibold text-amber-300/90 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Sin antecedentes & referencias cruzadas</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card service-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-5 shadow-lg">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif-luxury text-xl font-bold text-white mb-3">Capacitación Especializada</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Formación avanzada en técnicas de limpieza de alta gama, tratamiento de mármoles, maderas nobles, cristales, porcelanatos y telas delicadas.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800 text-[11px] font-semibold text-amber-300/90 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Cuidado de superficies de lujo</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card service-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-5 shadow-lg">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif-luxury text-xl font-bold text-white mb-3">Soluciones a Medida</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Servicio personalizado adaptado a los horarios, dinámicas y exigencias específicas de residencias privadas, embajadas y sedes corporativas.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800 text-[11px] font-semibold text-amber-300/90 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Modalidades con y sin retiro</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Segment Comparison Showcase: Residencial vs Corporativo -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Showcase Residencial -->
+        <div class="luxury-border-box p-8 relative overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                Residencias Privadas
+              </span>
+              <span class="text-xs font-semibold text-amber-400 flex items-center gap-1">
+                <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                Garantía 30 Días
+              </span>
+            </div>
+            <h3 class="font-serif-luxury text-2xl font-bold text-white mb-3">Hogares de Alto Perfil, Quintas & Penthouses</h3>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6">
+              Pensado para familias y residencias que exigen absoluta discreción, impecable presencia, confianza para la convivencia diaria y cuidado riguroso de indumentaria fina y bienes personales.
+            </p>
+            <ul class="space-y-2.5 text-xs text-zinc-300">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                <span>Jornada Completa, Media Jornada o Cama Adentro (Sin Retiro).</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                <span>Acuerdo de Confidencialidad y Reserva sobre la vida familiar.</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                <span>Garantía de reposición de 30 días sin costo extra.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-6 border-t border-zinc-800 flex items-center justify-between">
+            <span class="text-xs text-zinc-400">Contratación 100% formal</span>
+            <a href="#cotizador" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+              <span>Cotizar Residencial</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Showcase Corporativo -->
+        <div class="luxury-border-box p-8 relative overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-zinc-800 text-zinc-200 border border-zinc-700 text-xs font-bold uppercase tracking-wider">
+                Empresas & Oficinas
+              </span>
+              <span class="text-xs font-semibold text-amber-400 flex items-center gap-1">
+                <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
+                Garantía Extendida 60 Días
+              </span>
+            </div>
+            <h3 class="font-serif-luxury text-2xl font-bold text-white mb-3">Oficinas Corporativas, Embajadas & Directorios</h3>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6">
+              Orientado a firmas que manejan información sensible, salas de directorio, despachos ejecutivos y sedes diplomáticas donde la rigurosidad y el profesionalismo son innegociables.
+            </p>
+            <ul class="space-y-2.5 text-xs text-zinc-300">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                <span>Personal con capacitación en confidencialidad de documentos y despachos.</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                <span>Facturación formal, cumplimiento laboral y seguro integral.</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                <span>Garantía corporativa extendida de 60 días de reposición.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-6 border-t border-zinc-800 flex items-center justify-between">
+            <span class="text-xs text-zinc-400">Respaldo legal institucional</span>
+            <a href="#cotizador" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+              <span>Cotizar Corporativo</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. MÓDULO DE CONFIDENCIALIDAD, SEGURIDAD & GARANTÍA (SELLO DE EXCELENCIA)
+       ========================================================================= -->
+  <section id="garantias" class="py-24 bg-gradient-to-b from-[#0B0B0B] via-[#121215] to-[#0B0B0B] relative">
+    
+    <div class="ambient-glow-gold top-1/3 right-1/4 opacity-40"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-widest uppercase mb-3">
+          <span>Seguridad Jurídica & Reputacional</span>
+        </div>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Privacidad Absoluta & <span class="text-gold-gradient">Garantía Escrita</span>
+        </h2>
+        <p class="mt-4 text-zinc-400 text-sm sm:text-base leading-relaxed">
+          Diseñado para proteger la intimidad de las familias y el patrimonio de las empresas con el más estricto rigor legal del mercado.
+        </p>
+      </div>
+
+      <!-- Double Feature Block -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Bloque Privacidad & NDA -->
+        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border-amber-400/20">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-6">
+            <div class="w-24 h-24 flex-shrink-0">
+              <img src="assets/seal-nda.svg" alt="Sello Acuerdo NDA" class="w-full h-full object-contain">
+            </div>
+            <div>
+              <span class="text-[11px] font-bold tracking-widest uppercase text-amber-400">Protocolo de Confidencialidad</span>
+              <h3 class="font-serif-luxury text-2xl font-bold text-white mt-1">Acuerdos de No Divulgación (NDA)</h3>
+            </div>
+          </div>
+          
+          <div class="space-y-3.5 text-sm text-zinc-300 leading-relaxed">
+            <p>
+              Entendemos que abrir las puertas de su residencia o despacho requiere un grado de confianza superior. Todo el personal seleccionado por Mónica Bridges firma un <strong class="text-white">Acuerdo de Confidencialidad (NDA)</strong> con validez jurídica.
+            </p>
+            <ul class="space-y-2 text-xs text-zinc-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0"></i>
+                <span>Protección contra la difusión de imágenes, conversaciones o rutinas privadas.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0"></i>
+                <span>Reserva absoluta de documentos corporativos, actas y materiales sensibles.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0"></i>
+                <span>Penalidades legales explícitas en caso de cualquier violación al secreto profesional.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-zinc-800">
+            <button id="btn-view-nda-protocol" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 focus:outline-none">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>Consultar Cláusulas del Protocolo NDA</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bloque Garantías Escritas -->
+        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border-amber-400/20">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-6">
+            <div class="w-24 h-24 flex-shrink-0">
+              <img src="assets/seal-guarantee.svg" alt="Sello Garantía Escrita" class="w-full h-full object-contain">
+            </div>
+            <div>
+              <span class="text-[11px] font-bold tracking-widest uppercase text-amber-400">Tranquilidad Contractual</span>
+              <h3 class="font-serif-luxury text-2xl font-bold text-white mt-1">Garantía Escrita de Reposición</h3>
+            </div>
+          </div>
+
+          <div class="space-y-3.5 text-sm text-zinc-300 leading-relaxed">
+            <p>
+              Su tranquilidad está respaldada por escrito en nuestro contrato de servicios. Si el personal seleccionado no se adapta plenamente a sus dinámicas operativas, lo reemplazamos sin costo extra.
+            </p>
+            
+            <!-- Cards 30 / 60 -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <div class="p-3 rounded-xl bg-zinc-900 border border-zinc-800">
+                <span class="text-amber-400 font-serif-luxury text-2xl font-bold block">30 DÍAS</span>
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-zinc-300 block">Residencial</span>
+                <span class="text-[10px] text-zinc-400 block mt-0.5">Sustitución prioritaria</span>
+              </div>
+              <div class="p-3 rounded-xl bg-zinc-900 border border-amber-400/30">
+                <span class="text-gold-gradient font-serif-luxury text-2xl font-bold block">60 DÍAS</span>
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-zinc-300 block">Corporativo</span>
+                <span class="text-[10px] text-zinc-400 block mt-0.5">Garantía extendida</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-zinc-800">
+            <button id="btn-view-guarantee-protocol" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 focus:outline-none">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <span>Ver Términos de la Garantía de Reposición</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scope Transparency Seal Banner -->
+      <div class="mt-12 p-6 rounded-2xl bg-zinc-900/90 border border-amber-400/30 flex flex-col md:flex-row items-center gap-5 shadow-2xl">
+        <div class="w-12 h-12 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="check-circle" class="w-6 h-6"></i>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h4 class="font-serif-luxury text-base font-bold text-white">Clarificación Oficial de Alcance del Servicio</h4>
+          <p class="text-xs text-zinc-300 mt-1 leading-relaxed">
+            <strong class="text-amber-300">Mónica Bridges</strong> se especializa exclusivamente en la <span class="text-white font-medium">selección, verificación, contratación formal y provisión de talento idóneo</span>. Los insumos, productos químicos y equipamiento de limpieza son provistos por el cliente en sus respectivas instalaciones, asegurando que se utilicen sus marcas y estándares de confianza.
+          </p>
+        </div>
+        <a href="#cotizador" class="btn-outline-gold px-5 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap">
+          Comenzar Selección
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. COTIZADOR INTERACTIVO / WIZARD PASO A PASO
+       ========================================================================= -->
+  <section id="cotizador" class="py-24 bg-[#0B0B0B] relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-widest uppercase mb-3">
+          <span>Cotizador Digital Inmediato</span>
+        </div>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Configure su <span class="text-gold-gradient">Solicitud a Medida</span>
+        </h2>
+        <p class="mt-3 text-zinc-400 text-sm">
+          Complete los requerimientos de su inmueble para generar una solicitud estructurada directa con Mónica Bridges.
+        </p>
+      </div>
+
+      <!-- Main Wizard Container -->
+      <div class="luxury-border-box p-6 sm:p-10 shadow-2xl">
+        
+        <!-- Step Indicators -->
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-zinc-800">
+          <div class="flex items-center gap-2 sm:gap-4 overflow-x-auto w-full justify-between">
+            
+            <button id="wizard-pill-1" class="wizard-step-pill active px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all">
+              <span class="w-5 h-5 rounded-full bg-black/40 text-[10px] flex items-center justify-center">1</span>
+              <span>Servicio</span>
+            </button>
+
+            <div class="h-[1px] flex-1 bg-zinc-800 mx-2 hidden sm:block"></div>
+
+            <button id="wizard-pill-2" class="wizard-step-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-zinc-400 flex items-center gap-1.5 transition-all">
+              <span class="w-5 h-5 rounded-full bg-zinc-800 text-[10px] flex items-center justify-center">2</span>
+              <span>Modalidad</span>
+            </button>
+
+            <div class="h-[1px] flex-1 bg-zinc-800 mx-2 hidden sm:block"></div>
+
+            <button id="wizard-pill-3" class="wizard-step-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-zinc-400 flex items-center gap-1.5 transition-all">
+              <span class="w-5 h-5 rounded-full bg-zinc-800 text-[10px] flex items-center justify-center">3</span>
+              <span>Requisitos</span>
+            </button>
+
+            <div class="h-[1px] flex-1 bg-zinc-800 mx-2 hidden sm:block"></div>
+
+            <button id="wizard-pill-4" class="wizard-step-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-zinc-400 flex items-center gap-1.5 transition-all">
+              <span class="w-5 h-5 rounded-full bg-zinc-800 text-[10px] flex items-center justify-center">4</span>
+              <span>Contacto</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-zinc-800/80 h-1.5 rounded-full mb-8 overflow-hidden">
+          <div id="wizard-progress-bar" class="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-200 transition-all duration-300" style="width: 25%;"></div>
+        </div>
+
+        <!-- STEP 1 CONTENT: TIPO DE SERVICIO -->
+        <div id="wizard-step-content-1" class="block animate-fade">
+          <h3 class="font-serif-luxury text-xl font-bold text-white mb-2">Paso 1: ¿Qué tipo de propiedad requiere el personal?</h3>
+          <p class="text-xs text-zinc-400 mb-6">Seleccione el entorno para el cual realizaremos la búsqueda y selección especializada.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="option-service-type active p-5 rounded-xl border-2 border-amber-400 bg-zinc-800/80 cursor-pointer transition-all hover:border-amber-400" data-value="Residencia Privada (Casa / Penthouse)">
+              <div class="flex items-center justify-between mb-3">
+                <i data-lucide="home" class="w-7 h-7 text-amber-400"></i>
+                <span class="text-[10px] uppercase font-bold tracking-wider text-amber-300 px-2 py-0.5 rounded bg-amber-400/10">30 Días Garantía</span>
+              </div>
+              <h4 class="font-serif-luxury text-lg font-bold text-white">Casa Particular / Residencia</h4>
+              <p class="text-xs text-zinc-400 mt-1">Penthouses, casas en barrios privados, mansiones y residencias familiares con máxima privacidad.</p>
+            </div>
+
+            <div class="option-service-type p-5 rounded-xl border-2 border-zinc-700 bg-zinc-900/60 cursor-pointer transition-all hover:border-amber-400" data-value="Empresa / Corporativo (Oficinas)">
+              <div class="flex items-center justify-between mb-3">
+                <i data-lucide="building-2" class="w-7 h-7 text-amber-400"></i>
+                <span class="text-[10px] uppercase font-bold tracking-wider text-amber-300 px-2 py-0.5 rounded bg-amber-400/10">60 Días Garantía</span>
+              </div>
+              <h4 class="font-serif-luxury text-lg font-bold text-white">Empresa / Oficinas Corporativas</h4>
+              <p class="text-xs text-zinc-400 mt-1">Sedes ejecutivas, despachos profesionales, salas de directorio, embajadas y edificios corporativos.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- STEP 2 CONTENT: FRECUENCIA Y MODALIDAD -->
+        <div id="wizard-step-content-2" class="hidden">
+          <h3 class="font-serif-luxury text-xl font-bold text-white mb-2">Paso 2: Modalidad y Frecuencia Requerida</h3>
+          <p class="text-xs text-zinc-400 mb-6">Indique el régimen horario y los metros cuadrados aproximados del inmueble.</p>
+
+          <label class="text-xs font-semibold text-zinc-300 uppercase tracking-wider block mb-3">Régimen Horario</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            
+            <div class="option-modality active p-3.5 rounded-xl border border-amber-400 bg-zinc-800/80 cursor-pointer transition-all" data-value="Jornada Completa (Lunes a Viernes)">
+              <div class="font-semibold text-sm text-white">Jornada Completa</div>
+              <div class="text-xs text-zinc-400">Lunes a Viernes (8 horas diarias habituales)</div>
+            </div>
+
+            <div class="option-modality p-3.5 rounded-xl border border-zinc-700 bg-zinc-900 cursor-pointer transition-all hover:border-amber-400" data-value="Media Jornada (4 a 5 horas diarias)">
+              <div class="font-semibold text-sm text-white">Media Jornada</div>
+              <div class="text-xs text-zinc-400">Turno mañana o tarde (4 a 5 hs diarias)</div>
+            </div>
+
+            <div class="option-modality p-3.5 rounded-xl border border-zinc-700 bg-zinc-900 cursor-pointer transition-all hover:border-amber-400" data-value="Días Específicos (2 o 3 veces por semana)">
+              <div class="font-semibold text-sm text-white">Días Específicos</div>
+              <div class="text-xs text-zinc-400">2 a 3 veces por semana a coordinar</div>
+            </div>
+
+            <div class="option-modality p-3.5 rounded-xl border border-zinc-700 bg-zinc-900 cursor-pointer transition-all hover:border-amber-400" data-value="Cama Adentro / Con Retiro Extendido">
+              <div class="font-semibold text-sm text-white">Cama Adentro (Sin Retiro)</div>
+              <div class="text-xs text-zinc-400">Personal con pernocte y descanso semanal</div>
+            </div>
+
+          </div>
+
+          <label class="text-xs font-semibold text-zinc-300 uppercase tracking-wider block mb-3">Dimensión Aproximada</label>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="option-size p-3 rounded-lg border border-zinc-700 bg-zinc-900 text-center cursor-pointer hover:border-amber-400" data-value="Hasta 150 m²">
+              <span class="text-xs font-bold text-zinc-200">Hasta 150 m²</span>
+            </div>
+            <div class="option-size active p-3 rounded-lg border border-amber-400 bg-zinc-800/80 text-center cursor-pointer" data-value="150 a 300 m²">
+              <span class="text-xs font-bold text-amber-300">150 a 300 m²</span>
+            </div>
+            <div class="option-size p-3 rounded-lg border border-zinc-700 bg-zinc-900 text-center cursor-pointer hover:border-amber-400" data-value="Más de 300 m² / Gran Dimensión">
+              <span class="text-xs font-bold text-zinc-200">+300 m² / Grande</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 CONTENT: REQUISITOS ESPECIALES -->
+        <div id="wizard-step-content-3" class="hidden">
+          <h3 class="font-serif-luxury text-xl font-bold text-white mb-2">Paso 3: Exigencias y Requisitos Específicos</h3>
+          <p class="text-xs text-zinc-400 mb-6">Marque las habilidades especiales necesarias para la posición.</p>
+
+          <div class="space-y-3 mb-6">
+            <label class="flex items-start gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 cursor-pointer">
+              <input type="checkbox" value="Cuidado de mármoles y maderas nobles" class="special-req-check mt-1 rounded text-amber-500 focus:ring-amber-400">
+              <span class="text-xs text-zinc-300">
+                <strong class="text-white block">Tratamiento de Mármoles & Maderas Nobles</strong>
+                Conocimiento probado en técnicas y productos aptos para no deteriorar superficies de lujo.
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 cursor-pointer">
+              <input type="checkbox" value="Lavado y planchado de indumentaria fina" class="special-req-check mt-1 rounded text-amber-500 focus:ring-amber-400">
+              <span class="text-xs text-zinc-300">
+                <strong class="text-white block">Cuidado & Planchado de Ropa Delicada</strong>
+                Manejo experto de lino, seda, trajes de alta confección y vestidores exigentes.
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 cursor-pointer">
+              <input type="checkbox" value="Protocolo de etiqueta formal y discreción extrema" class="special-req-check mt-1 rounded text-amber-500 focus:ring-amber-400">
+              <span class="text-xs text-zinc-300">
+                <strong class="text-white block">Protocolo de Etiqueta & Diplomacia</strong>
+                Comportamiento sobrio, uniforme impecable y respeto por reuniones o comitivas.
+              </span>
+            </label>
+          </div>
+
+          <label class="text-xs font-semibold text-zinc-300 uppercase tracking-wider block mb-3">Urgencia de Incorporación</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="option-urgency active p-3 rounded-lg border border-amber-400 bg-zinc-800/80 text-center cursor-pointer" data-value="Inmediata (1 a 7 días)">
+              <span class="text-xs font-bold text-amber-300">Inmediata (1 a 7 días)</span>
+            </div>
+            <div class="option-urgency p-3 rounded-lg border border-zinc-700 bg-zinc-900 text-center cursor-pointer hover:border-amber-400" data-value="Próximos 15 días">
+              <span class="text-xs font-bold text-zinc-200">Próximos 15 días</span>
+            </div>
+            <div class="option-urgency p-3 rounded-lg border border-zinc-700 bg-zinc-900 text-center cursor-pointer hover:border-amber-400" data-value="Planificación a 30 días">
+              <span class="text-xs font-bold text-zinc-200">A 30 días</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 CONTENT: CONTACTO Y RESUMEN -->
+        <div id="wizard-step-content-4" class="hidden">
+          <h3 class="font-serif-luxury text-xl font-bold text-white mb-2">Paso 4: Datos de Contacto y Resumen Ejecutivo</h3>
+          <p class="text-xs text-zinc-400 mb-6">Ingrese sus datos para formalizar la solicitud directa hacia el equipo de Mónica Bridges.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div>
+              <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Nombre y Apellido *</label>
+              <input type="text" id="wizard-client-name" placeholder="Ej. Dra. Florencia Morales" class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            </div>
+
+            <div>
+              <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Teléfono / WhatsApp de Contacto *</label>
+              <input type="tel" id="wizard-client-phone" placeholder="Ej. +54 9 11 ..." class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            </div>
+
+            <div>
+              <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Zona / Barrio / Localidad *</label>
+              <input type="text" id="wizard-client-zone" placeholder="Ej. Palermo Chico, Recoleta, Nordelta..." class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            </div>
+
+            <div>
+              <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Correo Electrónico (Opcional)</label>
+              <input type="email" id="wizard-client-email" placeholder="cliente@corporativo.com" class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Observaciones adicionales</label>
+              <textarea id="wizard-client-notes" rows="2" placeholder="Detalles de horarios específicos, días preferidos, o requerimientos particulares..." class="w-full px-3.5 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none"></textarea>
+            </div>
+          </div>
+
+          <!-- Dynamic Live Summary Box -->
+          <div class="p-4 rounded-xl bg-zinc-900/90 border border-amber-400/40 text-xs space-y-2 mb-4">
+            <div class="font-serif-luxury text-amber-300 font-bold text-sm tracking-wider uppercase flex items-center justify-between">
+              <span>Resumen de Solicitud</span>
+              <span id="sum-guarantee" class="text-[11px] font-sans font-semibold text-amber-400">Garantía Escrita</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-zinc-800 text-zinc-300">
+              <div><strong class="text-zinc-400">Servicio:</strong> <span id="sum-service-type">Residencial</span></div>
+              <div><strong class="text-zinc-400">Modalidad:</strong> <span id="sum-modality">Jornada Completa</span></div>
+              <div><strong class="text-zinc-400">Dimensión:</strong> <span id="sum-size">150 a 300 m²</span></div>
+              <div><strong class="text-zinc-400">Requisitos:</strong> <span id="sum-reqs">Estándar de alta gama</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wizard Navigation & Action Controls -->
+        <div class="mt-8 pt-6 border-t border-zinc-800 flex items-center justify-between">
+          <button id="wizard-prev-btn" class="px-5 py-2.5 rounded-xl border border-zinc-700 text-zinc-300 hover:text-white text-xs font-semibold transition-all">
+            Atrás
+          </button>
+
+          <button id="wizard-next-btn" class="btn-gold px-6 py-2.5 rounded-xl text-xs font-bold tracking-wider">
+            Continuar
+          </button>
+        </div>
+
+        <!-- Final Dispatch Action Buttons (Visible on Step 4) -->
+        <div id="wizard-final-actions" class="hidden mt-6 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center gap-3">
+          
+          <button id="wizard-send-whatsapp" class="w-full sm:flex-1 py-3 px-5 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-black font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Generar Solicitud por WhatsApp</span>
+          </button>
+
+          <button id="wizard-send-email" class="w-full sm:w-auto py-3 px-5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Enviar por Email</span>
+          </button>
+
+          <button id="wizard-copy-summary" class="w-full sm:w-auto py-3 px-4 rounded-xl border border-zinc-700 hover:border-amber-400 text-zinc-300 hover:text-amber-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all" title="Copiar resumen">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span>Copiar</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. MÓDULO "TRABAJÁ CON NOSOTROS" (SECCIÓN PARA CANDIDATAS/OS)
+       ========================================================================= -->
+  <section id="candidatas" class="py-20 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border-y border-zinc-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-widest uppercase mb-3">
+            <span>Convocatoria de Personal</span>
+          </div>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            ¿Buscás Trabajo como <span class="text-gold-gradient">Personal de Limpieza</span>?
+          </h2>
+          <p class="mt-4 text-zinc-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            En Mónica Bridges dignificamos el trabajo doméstico y corporativo. Te conectamos con hogares y empresas de primer nivel que respetan la ley, ofrecen <strong class="text-white">contrato formal con aportes</strong>, salarios acordes a la exigencia y un trato humano y profesional.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-4 text-xs text-zinc-300">
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
+              <span>100% Bajo Contrato Legal</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
+              <span>Remuneración Justa y en Término</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
+              <span>Acompañamiento y Capacitación Continua</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col items-center lg:items-end gap-3">
+          <button data-open-candidate-modal class="btn-gold w-full sm:w-auto px-8 py-4 rounded-xl text-xs font-bold tracking-wider shadow-2xl">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Postularme Ahora</span>
+          </button>
+          <span class="text-[11px] text-zinc-400 text-center lg:text-right">
+            Selección permanente para CABA, Zona Norte y alrededores.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. PREGUNTAS FRECUENTES (ACCORDION INTERACTIVO)
+       ========================================================================= -->
+  <section id="faq" class="py-24 bg-[#0B0B0B]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-widest uppercase mb-3">
+          <span>Claridad & Transparencia</span>
+        </div>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Preguntas <span class="text-gold-gradient">Frecuentes</span>
+        </h2>
+        <p class="mt-3 text-zinc-400 text-sm">
+          Respuestas a las consultas habituales de familias y responsables corporativos.
+        </p>
+      </div>
+
+      <!-- Accordion List -->
+      <div class="space-y-4">
+        
+        <!-- Item 1 -->
+        <div class="accordion-item glass-card rounded-xl border border-zinc-800 overflow-hidden active">
+          <button type="button" class="accordion-header w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif-luxury font-bold text-sm sm:text-base text-white">¿Cómo garantizan la confidencialidad en mi hogar o empresa?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-amber-400 transition-transform duration-300 flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-1 text-xs sm:text-sm text-zinc-300 border-t border-zinc-800/60 leading-relaxed">
+            Todo el personal reclutado por Mónica Bridges suscribe un Acuerdo de Confidencialidad y No Divulgación (NDA) vinculante con previa validez legal. Dicho documento prohíbe de manera absoluta tomar fotografías, grabar conversaciones, comentar rutinas o divulgar información personal, familiar o societaria a terceros.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button type="button" class="accordion-header w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif-luxury font-bold text-sm sm:text-base text-white">¿El servicio incluye los insumos de limpieza?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-amber-400 transition-transform duration-300 flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-1 text-xs sm:text-sm text-zinc-300 border-t border-zinc-800/60 leading-relaxed">
+            No. Mónica Bridges se especializa de manera estricta y exclusiva en la selección, verificación, verificación de antecedentes y provisión de talento humano calificado. Los insumos, productos químicos específicos, herramientas y aspiradoras o maquinaria son provistos por el cliente en sus propias instalaciones, respetando así sus marcas de preferencia y características de sus revestimientos.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button type="button" class="accordion-header w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif-luxury font-bold text-sm sm:text-base text-white">¿Cómo funciona la garantía de reposición de 30 / 60 días?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-amber-400 transition-transform duration-300 flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-1 text-xs sm:text-sm text-zinc-300 border-t border-zinc-800/60 leading-relaxed">
+            Nuestra garantía está rubricada por escrito en el contrato de servicio. Para Casas Particulares, la garantía tiene una vigencia de 30 días corridos; para Empresas y Oficinas Corporativas, otorgamos una garantía extendida de 60 días. Si durante ese plazo la persona no se adecúa a sus pautas o requerimientos, seleccionamos y presentamos un nuevo perfil sin costo adicional de búsqueda.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button type="button" class="accordion-header w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif-luxury font-bold text-sm sm:text-base text-white">¿El personal contratado trabaja bajo contrato formal?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-amber-400 transition-transform duration-300 flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-1 text-xs sm:text-sm text-zinc-300 border-t border-zinc-800/60 leading-relaxed">
+            Absolutamente sí. El 100% de nuestras colocaciones se gestionan bajo contrato formal conforme a la legislación laboral vigente (Régimen de Casas Particulares / Ley de Contrato de Trabajo para empresas), garantizando protección contra contingencias legales y tranquilidad total tanto para el empleador como para el empleado.
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion-item glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button type="button" class="accordion-header w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif-luxury font-bold text-sm sm:text-base text-white">¿Cuánto tiempo demora la presentación de candidatas/os?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-amber-400 transition-transform duration-300 flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-1 text-xs sm:text-sm text-zinc-300 border-t border-zinc-800/60 leading-relaxed">
+            Gracias a nuestra base de talentos continuamente evaluada y activa, presentamos una terna preseleccionada en un plazo promedio de 24 a 72 horas hábiles tras la definición exacta del perfil requerido.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. FOOTER & CONTACTO DIRECTO
+       ========================================================================= -->
+  <footer id="contacto" class="bg-black border-t border-zinc-800/80 pt-16 pb-12 text-zinc-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-zinc-800/80">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-zinc-900 border border-amber-400/40 flex items-center justify-center p-1.5">
+              <img src="assets/favicon.svg" alt="MB" class="w-full h-full object-contain">
+            </div>
+            <span class="font-serif-luxury font-bold text-lg text-gold-gradient tracking-widest">
+              MÓNICA BRIDGES
+            </span>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm">
+            Especialistas en selección de personal de limpieza de excelencia para residencias privadas y empresas corporativas. Discreción, legalidad y garantía escrita.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://instagram.com/monica_bridges26" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-amber-300 hover:border-amber-400 transition-colors" aria-label="Instagram de Mónica Bridges">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/5491127789351" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-green-400 hover:border-green-400 transition-colors" aria-label="WhatsApp de Mónica Bridges">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+            <a href="mailto:monicabridges56@gmail.com" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-amber-300 hover:border-amber-400 transition-colors" aria-label="Email de Mónica Bridges">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-serif-luxury text-sm font-bold text-white uppercase tracking-wider mb-4">Navegación</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#inicio" class="hover:text-amber-300 transition-colors">Inicio</a></li>
+            <li><a href="#servicios" class="hover:text-amber-300 transition-colors">Servicios</a></li>
+            <li><a href="#garantias" class="hover:text-amber-300 transition-colors">Acuerdos NDA</a></li>
+            <li><a href="#garantias" class="hover:text-amber-300 transition-colors">Garantía Escrita</a></li>
+            <li><a href="#cotizador" class="hover:text-amber-300 transition-colors">Cotizador Online</a></li>
+            <li><a href="#faq" class="hover:text-amber-300 transition-colors">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Channels -->
+        <div>
+          <h4 class="font-serif-luxury text-sm font-bold text-white uppercase tracking-wider mb-4">Contacto Directo</h4>
+          <ul class="space-y-3 text-xs">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0"></i>
+              <a href="tel:+541127789351" class="hover:text-white transition-colors">+54 11 2778 9351</a>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="message-circle" class="w-3.5 h-3.5 text-green-400 mt-0.5 flex-shrink-0"></i>
+              <a href="https://wa.me/5491127789351" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp Oficial</a>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0"></i>
+              <a href="mailto:monicabridges56@gmail.com" class="hover:text-white transition-colors break-all">monicabridges56@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400 mt-0.5 flex-shrink-0"></i>
+              <a href="https://instagram.com/monica_bridges26" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@monica_bridges26</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Scope & Legal Tag -->
+        <div>
+          <h4 class="font-serif-luxury text-sm font-bold text-white uppercase tracking-wider mb-4">Alcance Legal</h4>
+          <p class="text-[11px] text-zinc-400 leading-relaxed">
+            Mónica Bridges se especializa exclusivamente en selección, verificación y contratación formal de personal. Los insumos y elementos de limpieza son provistos por el cliente en destino.
+          </p>
+          <div class="mt-4 pt-3 border-t border-zinc-900 text-[10px] text-zinc-400">
+            Atención personalizada en CABA, Zona Norte y principales áreas residenciales.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 gap-4">
+        <div>
+          &copy; <span id="current-year">2026</span> Mónica Bridges. Todos los derechos reservados.
+        </div>
+        <div class="flex items-center gap-4 text-[11px]">
+          <span>Confidencialidad Garantizada</span>
+          <span>•</span>
+          <span>100% Contrato Formal</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       9. FLOATING WHATSAPP BUTTON (PERMANENTE & ELEGANTE)
+       ========================================================================= -->
+  <a href="https://wa.me/5491127789351?text=Hola%20M%C3%B3nica%2C%20deseo%20hacer%20una%20consulta%20sobre%20el%20reclutamiento%20de%20personal%20de%20limpieza." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp group" 
+     aria-label="Contactar por WhatsApp a Mónica Bridges">
+    <span class="pulse-dot"></span>
+    <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366] group-hover:text-black transition-colors"></i>
+    <span class="hidden sm:inline">Mónica Bridges • En línea</span>
+  </a>
+
+  <!-- =========================================================================
+       10. MODAL: POSTULACIÓN PARA CANDIDATAS/OS ("TRABAJÁ CON NOSOTROS")
+       ========================================================================= -->
+  <div id="candidate-modal" class="modal-backdrop fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <div class="luxury-border-box max-w-xl w-full p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative animate-fade">
+      
+      <!-- Close Button -->
+      <button data-close-candidate-modal class="absolute top-5 right-5 text-zinc-400 hover:text-white p-1 rounded-lg focus:outline-none" aria-label="Cerrar modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="mb-5">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-amber-400 block mb-1">Postulaciones Laborales</span>
+        <h3 class="font-serif-luxury text-2xl font-bold text-white">Formá Parte de Nuestro Equipo</h3>
+        <p class="text-xs text-zinc-400 mt-1">
+          Buscamos personas comprometidas, respetuosas y con vocación de servicio para casas de familia de alto perfil y oficinas corporativas.
+        </p>
+      </div>
+
+      <form id="candidate-form" class="space-y-4">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Nombre Completo *</label>
+            <input type="text" id="cand-name" required placeholder="Tu nombre y apellido" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Edad</label>
+            <input type="number" id="cand-age" placeholder="Ej. 35" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Teléfono / WhatsApp *</label>
+            <input type="tel" id="cand-phone" required placeholder="+54 9 11 ..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Zona de Residencia *</label>
+            <input type="text" id="cand-zone" required placeholder="Ej. San Isidro, Tigre, CABA..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Años de Experiencia Comprobable</label>
+            <select id="cand-experience" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+              <option value="1 a 2 años">1 a 2 años</option>
+              <option value="3 a 5 años" selected>3 a 5 años</option>
+              <option value="Más de 5 años">Más de 5 años</option>
+              <option value="Más de 10 años">Más de 10 años</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Disponibilidad Horaria</label>
+            <select id="cand-availability" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+              <option value="Jornada Completa con Retiro">Jornada Completa (Con retiro)</option>
+              <option value="Cama Adentro (Sin Retiro)">Cama Adentro (Sin retiro)</option>
+              <option value="Media Jornada">Media Jornada</option>
+              <option value="Días Específicos">Días específicos</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Specialties Checkboxes -->
+        <div>
+          <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Tus Especialidades y Experiencia</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Casas de familia" class="cand-spec-check text-amber-500 rounded" checked>
+              <span class="text-zinc-300">Casas de familia</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Oficinas / Empresas" class="cand-spec-check text-amber-500 rounded">
+              <span class="text-zinc-300">Oficinas / Empresas</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Planchado y ropa delicada" class="cand-spec-check text-amber-500 rounded" checked>
+              <span class="text-zinc-300">Planchado y ropa fina</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Cocina básica / protocolo" class="cand-spec-check text-amber-500 rounded">
+              <span class="text-zinc-300">Cocina y protocolo</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-zinc-300 block mb-1">Enlace a CV o Drive (Opcional)</label>
+          <input type="url" id="cand-cv-link" placeholder="https://drive.google.com/..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-zinc-300 block mb-1">Comentarios / Breve Presentación</label>
+          <textarea id="cand-notes" rows="2" placeholder="Contanos brevemente sobre tus trabajos anteriores..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none"></textarea>
+        </div>
+
+        <label class="flex items-start gap-2 pt-1 cursor-pointer">
+          <input type="checkbox" id="cand-references" checked class="mt-0.5 rounded text-amber-500">
+          <span class="text-[11px] text-zinc-400">
+            Poseo referencias laborales comprobables de empleadores anteriores y documentación al día.
+          </span>
+        </label>
+
+        <!-- Actions -->
+        <div class="pt-3 flex flex-col sm:flex-row gap-2.5">
+          <button type="button" id="candidate-submit-wa" class="flex-1 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Enviar Postulación por WhatsApp</span>
+          </button>
+          <button type="button" id="candidate-submit-email" class="sm:w-auto py-3 px-4 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Enviar por Correo</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       11. MODAL: DETALLES DE PROTOCOLO NDA Y PÓLIZA DE GARANTÍA
+       ========================================================================= -->
+  <div id="cert-modal" class="modal-backdrop fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <div class="luxury-border-box max-w-lg w-full p-6 sm:p-8 relative animate-fade">
+      <button id="close-cert-modal" class="absolute top-5 right-5 text-zinc-400 hover:text-white p-1 rounded-lg focus:outline-none" aria-label="Cerrar modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <h3 id="cert-modal-title" class="font-serif-luxury text-xl font-bold text-white mb-4">Protocolo de Confidencialidad</h3>
+      <div id="cert-modal-body" class="space-y-4">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-end">
+        <a href="#cotizador" onclick="document.getElementById('cert-modal').classList.add('hidden'); document.body.style.overflow='';" class="btn-gold px-5 py-2 rounded-lg text-xs font-bold">
+          Iniciar Solicitud
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/quote-wizard.js"></script>
+  <script src="js/candidate-modal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

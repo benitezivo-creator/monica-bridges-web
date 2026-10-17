@@ -92,6 +92,12 @@
                         <strong style="color: #e74c3c;">RECHAZADO</strong>.
                     </p>
                 </div>
+
+                <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                    <a href="google-apps-script/INSTRUCCIONES.md" target="_blank" style="color: var(--gold-primary); font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-book"></i> Ver instrucciones paso a paso para Google Apps Script
+                    </a>
+                </div>
             </div>
 
             <!-- MÓDULO 2: Panel Exclusivo de Superusuario (Ajustes Avanzados) -->
@@ -166,21 +172,57 @@
         }
 
         function connectGoogleAccount() {
-            // Flujo de autorización para Moni
-            alert('Abriendo ventana de autorización de Google para Mónica Bridges...');
-            document.getElementById('connectedAccount').innerText = 'monicabridges56@gmail.com (Conectado)';
-            document.getElementById('connectedAccount').style.color = '#2ecc71';
+            var currentUrl = localStorage.getItem('mb_webhook_url') || '';
+            var webhookUrl = prompt('Ingrese la URL del Webhook de Google Apps Script de Moni:', currentUrl);
+            if (webhookUrl && webhookUrl.trim().startsWith('https://script.google.com/')) {
+                localStorage.setItem('mb_webhook_url', webhookUrl.trim());
+                document.getElementById('connectedAccount').innerText = 'Planilla & Drive Vinculados Correctamente';
+                document.getElementById('connectedAccount').style.color = '#2ecc71';
+                var hookInput = document.getElementById('webhookUrl');
+                if (hookInput) {
+                    hookInput.value = webhookUrl.trim();
+                }
+                alert('¡Integración con Google Sheets y Drive activada con éxito!');
+            } else if (webhookUrl) {
+                alert('URL inválida. Debe ser un enlace que comience con https://script.google.com/');
+            }
         }
 
         function saveSuperuserSettings() {
+            var webhookUrl = document.getElementById('webhookUrl').value.trim();
+            if (webhookUrl && webhookUrl.startsWith('https://script.google.com/')) {
+                localStorage.setItem('mb_webhook_url', webhookUrl);
+                document.getElementById('connectedAccount').innerText = 'Planilla & Drive Vinculados Correctamente';
+                document.getElementById('connectedAccount').style.color = '#2ecc71';
+            }
+            var autoReply = document.getElementById('autoReplyMsg').value.trim();
+            if (autoReply) {
+                localStorage.setItem('mb_autoreply_msg', autoReply);
+            }
             alert('Configuración técnica guardada correctamente.');
         }
 
-        // Verificación de sesión al cargar página
+        // Cargar estado guardado al iniciar sesión
         window.onload = function() {
-            const saved = localStorage.getItem('mb_admin_session');
-            if (saved) {
-                renderDashboard(JSON.parse(saved));
+            var savedSession = localStorage.getItem('mb_admin_session');
+            if (savedSession) {
+                renderDashboard(JSON.parse(savedSession));
+                var activeWebhook = localStorage.getItem('mb_webhook_url');
+                if (activeWebhook) {
+                    document.getElementById('connectedAccount').innerText = 'Planilla & Drive Vinculados Correctamente';
+                    document.getElementById('connectedAccount').style.color = '#2ecc71';
+                    var hookInput = document.getElementById('webhookUrl');
+                    if (hookInput) {
+                        hookInput.value = activeWebhook;
+                    }
+                }
+                var savedReply = localStorage.getItem('mb_autoreply_msg');
+                if (savedReply) {
+                    var replyInput = document.getElementById('autoReplyMsg');
+                    if (replyInput) {
+                        replyInput.value = savedReply;
+                    }
+                }
             }
         };
     </script>

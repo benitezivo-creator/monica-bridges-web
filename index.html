@@ -1079,33 +1079,38 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label class="text-xs font-semibold text-zinc-300 block mb-1">Teléfono / WhatsApp *</label>
-            <input type="tel" id="cand-phone" required placeholder="+54 9 11 ..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            <input type="tel" id="cand-phone" name="phone" required placeholder="+54 9 11 ..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
           </div>
           <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Zona de Residencia *</label>
-            <input type="text" id="cand-zone" required placeholder="Ej. San Isidro, Tigre, CABA..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Correo Electrónico (Confirmación)</label>
+            <input type="email" id="cand-email" name="email" placeholder="tu@email.com" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
+            <label class="text-xs font-semibold text-zinc-300 block mb-1">Zona de Residencia *</label>
+            <input type="text" id="cand-zone" name="zone" required placeholder="Ej. San Isidro, Tigre, CABA..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+          </div>
+          <div>
             <label class="text-xs font-semibold text-zinc-300 block mb-1">Años de Experiencia Comprobable</label>
-            <select id="cand-experience" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            <select id="cand-experience" name="experience" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
               <option value="1 a 2 años">1 a 2 años</option>
               <option value="3 a 5 años" selected>3 a 5 años</option>
               <option value="Más de 5 años">Más de 5 años</option>
               <option value="Más de 10 años">Más de 10 años</option>
             </select>
           </div>
-          <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Disponibilidad Horaria</label>
-            <select id="cand-availability" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-              <option value="Jornada Completa con Retiro">Jornada Completa (Con retiro)</option>
-              <option value="Cama Adentro (Sin Retiro)">Cama Adentro (Sin retiro)</option>
-              <option value="Media Jornada">Media Jornada</option>
-              <option value="Días Específicos">Días específicos</option>
-            </select>
-          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-zinc-300 block mb-1">Disponibilidad Horaria</label>
+          <select id="cand-availability" name="availability" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            <option value="Jornada Completa con Retiro">Jornada Completa (Con retiro)</option>
+            <option value="Cama Adentro (Sin Retiro)">Cama Adentro (Sin retiro)</option>
+            <option value="Media Jornada">Media Jornada</option>
+            <option value="Días Específicos">Días específicos</option>
+          </select>
         </div>
 
         <!-- Specialties Checkboxes -->
@@ -1131,8 +1136,17 @@
           </div>
         </div>
 
+        <!-- File Upload for CV -->
         <div>
-          <label class="text-xs font-semibold text-zinc-300 block mb-1">Enlace a CV o Drive (Opcional)</label>
+          <label class="text-xs font-semibold text-zinc-300 block mb-1">
+            <i class="fas fa-file-pdf text-amber-400"></i> Adjuntar CV en PDF o Word (Para Google Drive)
+          </label>
+          <input type="file" id="cand-file" name="cvFile" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-amber-400/20 file:text-amber-300 hover:file:bg-amber-400/30">
+          <p class="text-[11px] text-zinc-400 mt-1">El documento se subirá automáticamente a la carpeta de Google Drive de Mónica Bridges.</p>
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-zinc-300 block mb-1">Enlace a CV o Drive Alternativo (Opcional)</label>
           <input type="url" id="cand-cv-link" placeholder="https://drive.google.com/..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
         </div>
 
@@ -1149,15 +1163,22 @@
         </label>
 
         <!-- Actions -->
-        <div class="pt-3 flex flex-col sm:flex-row gap-2.5">
-          <button type="button" id="candidate-submit-wa" class="flex-1 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>Enviar Postulación por WhatsApp</span>
+        <div class="pt-3 flex flex-col gap-2.5">
+          <button type="submit" id="candidate-submit-drive" class="w-full py-3 px-4 rounded-xl btn-gold text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg cursor-pointer">
+            <i class="fab fa-google-drive"></i>
+            <span id="btn-drive-text">Enviar Postulación (Google Drive & Sheets)</span>
           </button>
-          <button type="button" id="candidate-submit-email" class="sm:w-auto py-3 px-4 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-            <span>Enviar por Correo</span>
-          </button>
+          
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button type="button" id="candidate-submit-wa" class="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Enviar por WhatsApp</span>
+            </button>
+            <button type="button" id="candidate-submit-email" class="sm:w-auto py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>Enviar por Correo</span>
+            </button>
+          </div>
         </div>
 
       </form>

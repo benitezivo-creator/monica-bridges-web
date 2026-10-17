@@ -450,7 +450,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
         
         <!-- Bloque Privacidad & NDA -->
-        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border-amber-400/20">
+        <div id="nda" class="glass-card rounded-2xl p-8 flex flex-col justify-between border-amber-400/20 scroll-mt-24">
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-6">
             <div class="w-24 h-24 flex-shrink-0">
               <img src="assets/seal-nda.svg" alt="Sello Acuerdo NDA" class="w-full h-full object-contain">
@@ -490,7 +490,7 @@
         </div>
 
         <!-- Bloque Garantías Escritas -->
-        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border-amber-400/20">
+        <div id="garantia" class="glass-card rounded-2xl p-8 flex flex-col justify-between border-amber-400/20 scroll-mt-24">
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-6">
             <div class="w-24 h-24 flex-shrink-0">
               <img src="assets/seal-guarantee.svg" alt="Sello Garantía Escrita" class="w-full h-full object-contain">
@@ -944,102 +944,83 @@
   <!-- =========================================================================
        8. FOOTER & CONTACTO DIRECTO
        ========================================================================= -->
-  <footer id="contacto" class="bg-black border-t border-zinc-800/80 pt-16 pb-12 text-zinc-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-zinc-800/80">
-        
-        <!-- Brand Info -->
-        <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-zinc-900 border border-amber-400/40 flex items-center justify-center p-1.5">
-              <img src="assets/favicon.svg" alt="MB" class="w-full h-full object-contain">
+  <!-- Footer / Pie de página -->
+  <footer id="contacto" class="site-footer">
+    <div class="footer-container">
+        <!-- Columna 1: Marca y Horario -->
+        <div class="footer-col brand-col">
+            <div class="brand-logo">
+                <span class="logo-badge">MB</span>
+                <h2>MÓNICA BRIDGES</h2>
             </div>
-            <span class="font-serif-luxury font-bold text-lg text-gold-gradient tracking-widest">
-              MÓNICA BRIDGES
-            </span>
-          </div>
-          <p class="text-xs text-zinc-300 leading-relaxed max-w-sm">
-            Especialistas en selección de personal de limpieza de excelencia para residencias privadas y empresas corporativas. Discreción, legalidad y garantía escrita.
-          </p>
-          <div class="schedule-badge">
-            <i class="far fa-clock" data-lucide="clock"></i>
-            <span><strong>Horario de atención:</strong> Lunes a Sábados de 9:30 a 18:30 hs.</span>
-          </div>
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://instagram.com/monica_bridges26" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-amber-300 hover:border-amber-400 transition-colors" aria-label="Instagram de Mónica Bridges">
-              <i data-lucide="instagram" class="w-4 h-4"></i>
-            </a>
-            <a href="https://wa.me/5491127789351" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-green-400 hover:border-green-400 transition-colors" aria-label="WhatsApp de Mónica Bridges">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-            </a>
-            <a href="mailto:monicabridges56@gmail.com" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-amber-300 hover:border-amber-400 transition-colors" aria-label="Email de Mónica Bridges">
-              <i data-lucide="mail" class="w-4 h-4"></i>
-            </a>
-          </div>
+            <p>Especialistas en selección de personal de limpieza de excelencia para residencias privadas y empresas corporativas. Discreción, legalidad y garantía escrita.</p>
+            
+            <div class="schedule-badge">
+                <i class="far fa-clock"></i>
+                <span><strong>Horario de atención:</strong> Lunes a Sábados de 9:30 a 18:30 hs.</span>
+            </div>
+
+            <!-- Redes Sociales e Íconos corregidos con FontAwesome -->
+            <div class="footer-social-links">
+                <a href="https://wa.me/541127789351" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com/monica_bridges26" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:monicabridges56@gmail.com" aria-label="Correo Electrónico" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="font-serif-luxury text-sm font-bold text-white uppercase tracking-wider mb-4">Navegación</h4>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#inicio" class="hover:text-amber-300 transition-colors">Inicio</a></li>
-            <li><a href="#servicios" class="hover:text-amber-300 transition-colors">Servicios</a></li>
-            <li><a href="#garantias" class="hover:text-amber-300 transition-colors">Acuerdos NDA</a></li>
-            <li><a href="#garantias" class="hover:text-amber-300 transition-colors">Garantía Escrita</a></li>
-            <li><a href="#cotizador" class="hover:text-amber-300 transition-colors">Cotizador Online</a></li>
-            <li><a href="#faq" class="hover:text-amber-300 transition-colors">Preguntas Frecuentes</a></li>
-          </ul>
+        <!-- Columna 2: Navegación -->
+        <div class="footer-col nav-col">
+            <h3>NAVEGACIÓN</h3>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nda">Acuerdos NDA</a></li>
+                <li><a href="#garantia">Garantía Escrita</a></li>
+                <li><a href="#cotizador">Cotizador Online</a></li>
+                <li><a href="#faq">Preguntas Frecuentes</a></li>
+            </ul>
         </div>
 
-        <!-- Contact Channels -->
-        <div>
-          <h4 class="font-serif-luxury text-sm font-bold text-white uppercase tracking-wider mb-4">Contacto Directo</h4>
-          <ul class="space-y-3 text-xs">
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0"></i>
-              <a href="tel:+541127789351" class="hover:text-white transition-colors">+54 11 2778 9351</a>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="message-circle" class="w-3.5 h-3.5 text-green-400 mt-0.5 flex-shrink-0"></i>
-              <a href="https://wa.me/5491127789351" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp Oficial</a>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0"></i>
-              <a href="mailto:monicabridges56@gmail.com" class="hover:text-white transition-colors break-all">monicabridges56@gmail.com</a>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400 mt-0.5 flex-shrink-0"></i>
-              <a href="https://instagram.com/monica_bridges26" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@monica_bridges26</a>
-            </li>
-          </ul>
+        <!-- Columna 3: Contacto Directo con Íconos -->
+        <div class="footer-col contact-col">
+            <h3>CONTACTO DIRECTO</h3>
+            <ul class="contact-list">
+                <li>
+                    <i class="fab fa-whatsapp text-gold"></i> 
+                    <a href="https://wa.me/541127789351" target="_blank">+54 11 2778 9351</a>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp text-gold"></i> 
+                    <a href="https://wa.me/541127789351" target="_blank">WhatsApp Oficial</a>
+                </li>
+                <li>
+                    <i class="fas fa-envelope text-gold"></i> 
+                    <a href="mailto:monicabridges56@gmail.com">monicabridges56@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fab fa-instagram text-gold"></i> 
+                    <a href="https://instagram.com/monica_bridges26" target="_blank">@monica_bridges26</a>
+                </li>
+            </ul>
         </div>
 
-        <!-- Scope & Legal Tag -->
-        <div>
-          <h4 class="font-serif-luxury text-sm font-bold text-white uppercase tracking-wider mb-4">Alcance Legal</h4>
-          <p class="text-[11px] text-zinc-400 leading-relaxed">
-            Mónica Bridges se especializa exclusivamente en selección, verificación y contratación formal de personal. Los insumos y elementos de limpieza son provistos por el cliente en destino.
-          </p>
-          <div class="mt-4 pt-3 border-t border-zinc-900 text-[10px] text-zinc-400">
-            Atención personalizada en CABA, Zona Norte y principales áreas residenciales.
-          </div>
+        <!-- Columna 4: Alcance Legal -->
+        <div class="footer-col legal-col">
+            <h3>ALCANCE LEGAL</h3>
+            <p>Mónica Bridges se especializa exclusivamente en selección, verificación y contratación formal de personal. Los insumos y elementos de limpieza son provistos por el cliente en destino.</p>
+            <p class="small-text">Atención personalizada en CABA, Zona Norte y principales áreas residenciales.</p>
         </div>
+    </div>
 
-      </div>
-
-      <!-- Copyright Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 gap-4">
-        <div>
-          &copy; <span id="current-year">2026</span> Mónica Bridges. Todos los derechos reservados.
-        </div>
-        <div class="flex items-center gap-4 text-[11px]">
-          <span>Confidencialidad Garantizada</span>
-          <span>•</span>
-          <span>100% Contrato Formal</span>
-        </div>
-      </div>
-
+    <div class="footer-bottom">
+        <p>© 2026 Mónica Bridges. Todos los derechos reservados.</p>
+        <p>Confidencialidad Garantizada • 100% Contrato Formal</p>
     </div>
   </footer>
 

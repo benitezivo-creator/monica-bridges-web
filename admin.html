@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración — Mónica Bridges</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
+    <div class="admin-container" style="max-width: 600px; width: 100%; margin: 40px auto; padding: 36px 30px; background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 14px; text-align: center; box-shadow: var(--shadow-card); backdrop-filter: blur(14px);">
+        
+        <div style="margin-bottom: 24px;">
+            <span class="logo-badge" style="margin-bottom: 12px;">MB</span>
+            <h1 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 6px;">Panel de Administración</h1>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Gestión de reclutamiento y vinculaciones</p>
+        </div>
+
+        <!-- Sección de Login para Moni -->
+        <div id="loginSection" class="admin-card">
+            <h2 style="font-size: 1.2rem; margin-bottom: 20px; color: #fff;">Acceso Restringido</h2>
+            <form onsubmit="event.preventDefault(); checkLogin();">
+                <div class="form-group">
+                    <label for="adminPass">Contraseña de Administrador</label>
+                    <input type="password" id="adminPass" placeholder="Ingrese su clave" required>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; margin-top: 10px;">Ingresar al Panel</button>
+            </form>
+            <div style="margin-top: 20px;">
+                <a href="index.html" style="color: var(--text-muted); font-size: 0.82rem; text-decoration: none; transition: color 0.2s ease;">
+                    <i class="fas fa-arrow-left"></i> Volver al sitio web principal
+                </a>
+            </div>
+        </div>
+
+        <!-- Panel de Control (Visible tras ingresar) -->
+        <div id="dashboardSection" style="display: none; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <span style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 600;">Sesión activa: Moni</span>
+                <button onclick="logout()" style="background: none; border: none; color: #e74c3c; font-size: 0.82rem; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+
+            <h2 style="font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 15px;">Vinculación con Google Workspace</h2>
+            <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-secondary); line-height: 1.5;">
+                Conecte su cuenta personal o corporativa de Google para que las postulaciones y CVs se almacenen automáticamente en su Google Drive y Google Sheets.
+            </p>
+
+            <div style="background: rgba(0,0,0,0.45); padding: 22px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px;">
+                <p style="margin-bottom: 14px; font-size: 0.92rem;">
+                    <strong>Estado actual:</strong> 
+                    <span id="syncStatus" style="color: #f1c40f; font-weight: 600;">Pendiente de autorización</span>
+                </p>
+                <button id="btnConnectGoogle" onclick="connectGoogle()" class="btn-gold" style="display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-google"></i> Conectar mi Google Drive & Sheets
+                </button>
+            </div>
+
+            <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 10px;">Gestión rápida de candidatos:</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                Una vez conectada la planilla, podrá cambiar los estados a: 
+                <span style="color: #f1c40f; font-weight: 600;">En revisión</span>, 
+                <span style="color: #2ecc71; font-weight: 600;">Referencias OK</span> o 
+                <span style="color: #e74c3c; font-weight: 600;">RECHAZADO</span> directo en su hoja de cálculo.
+            </p>
+
+            <div style="margin-top: 24px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center;">
+                <a href="index.html" style="color: var(--gold-primary); font-size: 0.85rem; text-decoration: none;">
+                    <i class="fas fa-home"></i> Ir a la página principal
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const pass = document.getElementById('adminPass').value;
+            // Clave temporal de acceso
+            if (pass === 'moni2026' || pass === 'admin') {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('dashboardSection').style.display = 'block';
+            } else {
+                alert('Contraseña incorrecta');
+            }
+        }
+
+        function logout() {
+            document.getElementById('dashboardSection').style.display = 'none';
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('adminPass').value = '';
+        }
+
+        function connectGoogle() {
+            const status = document.getElementById('syncStatus');
+            status.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Conectando...';
+            setTimeout(() => {
+                status.style.color = '#2ecc71';
+                status.innerHTML = '<i class="fas fa-check-circle"></i> Listo para configurar credenciales';
+                alert('Para vincular su cuenta definitiva, configure el ID de Google Client en el archivo de configuración o contacte al administrador.');
+            }, 1200);
+        }
+    </script>
+</body>
+</html>

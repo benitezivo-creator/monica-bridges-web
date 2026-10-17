@@ -13,8 +13,8 @@ function doPost(e) {
 
     // Encabezados si es la primera vez
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Fecha y Hora", "Nombre Completo", "Teléfono / WhatsApp", "Experiencia", "CV (Enlace Drive)", "Estado"]);
-      sheet.getRange(1, 1, 1, 6).setFontWeight("bold").setBackground("#F4DF9B");
+      sheet.appendRow(["Fecha y Hora", "Nombre Completo", "Teléfono / WhatsApp", "Especialidad", "Experiencia", "CV (Enlace Drive)", "Estado"]);
+      sheet.getRange(1, 1, 1, 7).setFontWeight("bold").setBackground("#F4DF9B");
     }
 
     // 2. Obtener o crear la Carpeta en Google Drive
@@ -32,9 +32,17 @@ function doPost(e) {
 
     // 4. Agregar Fila a Google Sheets con Menú Desplegable de Estado
     var timestamp = new Date();
-    sheet.appendRow([timestamp, data.fullName, data.phone, data.experience, fileUrl, "En revisión"]);
+    sheet.appendRow([
+      timestamp, 
+      data.fullName, 
+      data.phone, 
+      data.specialty || "No especificada", 
+      data.experience, 
+      fileUrl, 
+      "En revisión"
+    ]);
     var lastRow = sheet.getLastRow();
-    var cellState = sheet.getRange(lastRow, 6);
+    var cellState = sheet.getRange(lastRow, 7);
 
     // Regla de Validación (Desplegable: En revisión, Referencias OK, RECHAZADO)
     var rule = SpreadsheetApp.newDataValidation()

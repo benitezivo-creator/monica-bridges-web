@@ -236,7 +236,7 @@
         <div class="px-4 pt-4 md:pt-0">
           <span class="font-serif-luxury text-3xl lg:text-4xl font-bold text-gold-gradient block">100%</span>
           <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mt-1 block">Personal Verificado</span>
-          <p class="text-xs text-zinc-400 mt-1 max-w-xs mx-auto">Antecedentes penales chequeados, DNI validado y referencias laborales cruzadas comprobables.</p>
+          <p class="text-xs text-zinc-400 mt-1 max-w-xs mx-auto">Antecedentes penales actualizados, comprobación biométrica de identidad y referencias laborales cruzadas.</p>
         </div>
         <div class="px-4 pt-4 md:pt-0">
           <span class="font-serif-luxury text-3xl lg:text-4xl font-bold text-gold-gradient block">0%</span>
@@ -905,7 +905,7 @@
             <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-amber-400 transition-transform duration-300 flex-shrink-0"></i>
           </button>
           <div class="accordion-content px-5 pb-5 pt-1 text-xs sm:text-sm text-zinc-300 border-t border-zinc-800/60 leading-relaxed">
-            No. Mónica Bridges se especializa de manera estricta y exclusiva en la selección, verificación, verificación de antecedentes y provisión de talento humano calificado. Los insumos, productos químicos específicos, herramientas y aspiradoras o maquinaria son provistos por el cliente en sus propias instalaciones, respetando así sus marcas de preferencia y características de sus revestimientos.
+            No. Nos dedicamos exclusivamente a la selección, evaluación y provisión de personal calificado. Los insumos, herramientas y maquinaria de limpieza corren por cuenta del cliente, permitiéndole mantener el control sobre las marcas y productos que prefiere utilizar en sus espacios.
           </div>
         </div>
 
@@ -1113,9 +1113,23 @@
           </select>
         </div>
 
+        <!-- Especialidad Principal (Dropdown) -->
+        <div>
+          <label for="specialty" class="text-xs font-semibold text-zinc-300 block mb-1">Especialidad Principal *</label>
+          <select id="specialty" name="specialty" required class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
+            <option value="" disabled selected>Seleccione una especialidad...</option>
+            <option value="Limpieza Residencial y Empresas">Limpieza Residencial y Empresas</option>
+            <option value="Cuidado de niños / Niñera">Cuidado de niños / Niñera</option>
+            <option value="Cuidado de adultos mayores">Cuidado de adultos mayores</option>
+            <option value="Manejo de personal">Manejo de personal</option>
+            <option value="Cocina y Protocolo">Cocina y Protocolo</option>
+            <option value="Mantenimiento General">Mantenimiento General</option>
+          </select>
+        </div>
+
         <!-- Specialties Checkboxes -->
         <div>
-          <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Tus Especialidades y Experiencia</label>
+          <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Áreas de Experiencia Adicionales</label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
             <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
               <input type="checkbox" value="Casas de familia" class="cand-spec-check text-amber-500 rounded" checked>
@@ -1126,12 +1140,28 @@
               <span class="text-zinc-300">Oficinas / Empresas</span>
             </label>
             <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Planchado y ropa delicada" class="cand-spec-check text-amber-500 rounded" checked>
+              <input type="checkbox" value="Cuidado de niños / Niñera" class="cand-spec-check text-amber-500 rounded">
+              <span class="text-zinc-300">Cuidado de niños / Niñera</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Cuidado de adultos mayores" class="cand-spec-check text-amber-500 rounded">
+              <span class="text-zinc-300">Cuidado de adultos mayores</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Manejo de personal" class="cand-spec-check text-amber-500 rounded">
+              <span class="text-zinc-300">Manejo de personal</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Planchado y ropa fina" class="cand-spec-check text-amber-500 rounded" checked>
               <span class="text-zinc-300">Planchado y ropa fina</span>
             </label>
             <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Cocina básica / protocolo" class="cand-spec-check text-amber-500 rounded">
+              <input type="checkbox" value="Cocina y protocolo" class="cand-spec-check text-amber-500 rounded">
               <span class="text-zinc-300">Cocina y protocolo</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
+              <input type="checkbox" value="Mantenimiento general" class="cand-spec-check text-amber-500 rounded">
+              <span class="text-zinc-300">Mantenimiento general</span>
             </label>
           </div>
         </div>

@@ -94,10 +94,11 @@ Hola Mónica, deseo postularme para formar parte del personal de limpieza califi
 • *Correo electrónico:* ${data.email || 'No especificado'}
 
 💼 *EXPERIENCIA & ANTECEDENTES:*
-• *Años de experiencia comprobable:* ${data.experienceYears}
-• *Áreas en las que trabajó:* ${data.specialties}
+• *Especialidad principal:* ${data.specialty || 'No especificada'}
+• *Años de experiencia:* ${data.experienceYears}
+• *Competencias adicionales:* ${data.specialties}
 • *Disponibilidad horaria:* ${data.availability}
-• *Referencias laborales comprobables:* ${data.hasReferences ? 'SÍ (Disponibles para verificación)' : 'En trámite'}
+• *Referencias laborales:* ${data.hasReferences ? 'SÍ (Comprobables)' : 'En trámite'}
 ${data.cvLink ? `• *Enlace a CV o Drive:* ${data.cvLink}\n` : ''}
 ${data.additionalNotes ? `• *Comentarios / Perfil:* ${data.additionalNotes}\n` : ''}
 _Cuento con disponibilidad para firmar Acuerdo de Confidencialidad (NDA) y trabajar bajo contratación formal._
@@ -121,7 +122,7 @@ Quedo atenta/o a su convocatoria para la entrevista de selección.`;
         const data = collectFormData();
         if (!data) return;
 
-        const subject = encodeURIComponent(`Postulación Laboral de Personal de Limpieza - ${data.fullName}`);
+        const subject = encodeURIComponent(`Postulación Laboral - ${data.fullName} (${data.specialty || 'Personal'})`);
         const body = encodeURIComponent(`POSTULACIÓN DE PERSONAL - MÓNICA BRIDGES
 ----------------------------------------
 Nombre completo: ${data.fullName}
@@ -130,8 +131,9 @@ Teléfono: ${data.phone}
 Correo: ${data.email || 'No especificado'}
 Zona de residencia: ${data.zone}
 
+Especialidad principal: ${data.specialty || 'No especificada'}
 Años de experiencia: ${data.experienceYears}
-Especialidades: ${data.specialties}
+Competencias adicionales: ${data.specialties}
 Disponibilidad: ${data.availability}
 Referencias comprobables: ${data.hasReferences ? 'SÍ' : 'No'}
 ${data.cvLink ? `Enlace a CV / Archivo: ${data.cvLink}\n` : ''}
@@ -173,6 +175,7 @@ ${data.additionalNotes ? `Notas adicionales: ${data.additionalNotes}\n` : ''}
         fullName: data.fullName,
         phone: data.phone,
         email: data.email || '',
+        specialty: data.specialty || data.specialties || 'No especificada',
         experience: data.experienceYears + (data.specialties ? ' (' + data.specialties + ')' : ''),
         zone: data.zone,
         fileName: fileName || '',
@@ -223,6 +226,7 @@ ${data.additionalNotes ? `Notas adicionales: ${data.additionalNotes}\n` : ''}
     const phone = document.getElementById('cand-phone')?.value.trim() || document.getElementById('phone')?.value.trim();
     const email = document.getElementById('cand-email')?.value.trim() || document.getElementById('email')?.value.trim();
     const zone = document.getElementById('cand-zone')?.value.trim();
+    const specialty = document.getElementById('specialty')?.value || document.getElementById('cand-specialty')?.value || '';
     const documentation = document.getElementById('cand-doc')?.value.trim() || 'DNI vigente';
     const experienceYears = document.getElementById('cand-experience')?.value || document.getElementById('experience')?.value || '3 a 5 años';
     const availability = document.getElementById('cand-availability')?.value || 'Jornada Completa';
@@ -257,6 +261,7 @@ ${data.additionalNotes ? `Notas adicionales: ${data.additionalNotes}\n` : ''}
       phone,
       email,
       zone,
+      specialty,
       documentation,
       experienceYears,
       availability,

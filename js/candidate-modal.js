@@ -61,6 +61,17 @@
     document.body.style.overflow = '';
   }
 
+  // Expose global functions for direct inline onclick handlers
+  window.openCandidateModal = function () {
+    const modal = document.getElementById('candidate-modal');
+    openModal(modal);
+  };
+
+  window.closeCandidateModal = function () {
+    const modal = document.getElementById('candidate-modal');
+    closeModal(modal);
+  };
+
   function setupCandidateForm() {
     const form = document.getElementById('candidate-form') || document.getElementById('candidateForm');
     const driveSubmitBtn = document.getElementById('candidate-submit-drive');

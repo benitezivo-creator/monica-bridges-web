@@ -756,4 +756,40 @@ p, li, label {
   border: 1px solid #e74c3c;
 }
 
+/* Estilos de Sección Nuestra Historia & Viñetas */
+.section-subtitle {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-secondary);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.story-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.story-bullets li {
+  margin-bottom: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.pilar-tag {
+  color: var(--gold-primary);
+  font-weight: 600;
+}
+
+.benefits-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+
 

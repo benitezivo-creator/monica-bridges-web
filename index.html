@@ -90,10 +90,11 @@
         <!-- Desktop Navigation Links -->
         <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-zinc-300">
           <a href="#inicio" class="hover:text-amber-300 transition-colors">Inicio</a>
+          <a href="#historia" class="hover:text-amber-300 transition-colors">Nuestra Historia</a>
           <a href="#servicios" class="hover:text-amber-300 transition-colors">Servicios</a>
           <a href="#garantias" class="hover:text-amber-300 transition-colors">Confidencialidad & Garantía</a>
           <a href="#cotizador" class="hover:text-amber-300 transition-colors">Cotizador</a>
-          <a href="#candidatas" class="hover:text-amber-300 transition-colors">Candidatas</a>
+          <a href="#postulantes" class="hover:text-amber-300 transition-colors">Candidatas</a>
           <a href="#faq" class="hover:text-amber-300 transition-colors">Preguntas</a>
           <a href="#contacto" class="hover:text-amber-300 transition-colors">Contacto</a>
         </nav>
@@ -104,7 +105,7 @@
             <i class="fas fa-lock"></i>
             <span>Acceso Admin</span>
           </a>
-          <button data-open-candidate-modal class="text-xs font-semibold text-zinc-400 hover:text-amber-300 px-3 py-2 transition-colors">
+          <button data-open-candidate-modal onclick="openCandidateModal()" class="text-xs font-semibold text-zinc-400 hover:text-amber-300 px-3 py-2 transition-colors">
             Postulaciones
           </button>
           <a href="#cotizador" class="btn-gold px-4 py-2.5 rounded-full text-xs font-bold tracking-wider shadow-lg">
@@ -122,10 +123,11 @@
       <!-- Mobile Dropdown Menu -->
       <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-3 border-t border-zinc-800 mt-3 flex flex-col gap-3">
         <a href="#inicio" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Inicio</a>
+        <a href="#historia" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Nuestra Historia</a>
         <a href="#servicios" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Servicios de Selección</a>
         <a href="#garantias" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Confidencialidad (NDA) & Garantías</a>
         <a href="#cotizador" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Cotizador Interactivo</a>
-        <a href="#candidatas" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Trabajá con Nosotros</a>
+        <a href="#postulantes" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Trabajá con Nosotros</a>
         <a href="#faq" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Preguntas Frecuentes</a>
         <a href="#contacto" class="mobile-nav-link text-sm font-medium text-zinc-300 hover:text-amber-300 py-1.5">Contacto Directo</a>
         
@@ -196,7 +198,7 @@
         </div>
         <div class="badge-trust">
           <i data-lucide="building-2" class="w-4 h-4 text-amber-400"></i>
-          <span>60 Días Garantía Empresas</span>
+          <span>60 Días Garantía Corporativa</span>
         </div>
       </div>
 
@@ -323,19 +325,19 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="glass-card service-card p-6 rounded-2xl flex flex-col justify-between">
+        <!-- Card 4: Soluciones a Medida -->
+        <div class="card pilar-card glass-card service-card p-6 rounded-2xl flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-5 shadow-lg">
-              <i data-lucide="award" class="w-6 h-6"></i>
+            <div class="pilar-icon">
+              <i class="fas fa-sliders-h"></i>
             </div>
-            <h3 class="font-serif-luxury text-xl font-bold text-white mb-3">Soluciones a Medida</h3>
+            <h3 class="font-serif-luxury text-xl font-bold text-white mb-3">SOLUCIONES A MEDIDA</h3>
             <p class="text-xs text-zinc-400 leading-relaxed">
-              Servicio personalizado adaptado a los horarios, dinámicas y exigencias específicas de residencias privadas, embajadas y sedes corporativas.
+              Diseñado en función de los horarios, dinámicas y exigencias específicas de residencias privadas, embajadas y sedes corporativas.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-zinc-800 text-[11px] font-semibold text-amber-300/90 flex items-center gap-1.5">
-            <i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i>
+          <div class="pilar-tag mt-6 pt-4 border-t border-zinc-800 text-[11px] font-semibold text-amber-300/90 flex items-center gap-1.5">
+            <i class="fas fa-check text-gold"></i>
             <span>Modalidades con y sin retiro</span>
           </div>
         </div>
@@ -425,6 +427,56 @@
           </div>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       NUESTRA HISTORIA (DE LA EXPERIENCIA REAL A LA SELECCIÓN DE ALTA GAMA)
+       ========================================================================= -->
+  <section id="historia" class="py-24 bg-gradient-to-b from-[#0B0B0B] via-zinc-950 to-[#0B0B0B] border-t border-zinc-800/80 relative overflow-hidden">
+    <div class="ambient-glow-gold top-1/2 left-10 -translate-y-1/2 opacity-25"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <span class="section-subtitle">NUESTRA HISTORIA</span>
+      
+      <!-- Frase en letras grandes y dorado -->
+      <h2 class="text-gold font-serif-luxury" style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+        De la experiencia real a la selección de alta gama.
+      </h2>
+
+      <div class="story-content text-zinc-300 text-sm sm:text-base leading-relaxed max-w-4xl space-y-4">
+        <p>
+          <strong>Mónica Bridges</strong> nació del esfuerzo diario y la perspectiva única de haber trabajado en primera persona como empleada doméstica.
+        </p>
+        <p>
+          Conocer el oficio desde adentro nos permitió detectar la gran falencia del sector: la falta de un puente profesional y seguro entre el personal calificado y los entornos más exigentes.
+        </p>
+        <p>
+          Transformamos esa vivencia en nuestra misión: aplicar la máxima rigurosidad de los recursos humanos corporativos al ámbito privado y empresarial de lujo.
+        </p>
+
+        <div class="my-6 p-6 sm:p-7 rounded-2xl bg-zinc-900/90 border border-amber-400/30 shadow-2xl backdrop-blur-md">
+          <ul class="story-bullets space-y-3.5 text-xs sm:text-sm text-zinc-300">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-gold mt-1 flex-shrink-0"></i>
+              <span><strong>Filtros con conocimiento real:</strong> Evaluamos con la precisión de quien domina las técnicas de cuidado fino y los protocolos de discreción (NDA).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-shield-alt text-gold mt-1 flex-shrink-0"></i>
+              <span><strong>Seguridad innegociable:</strong> Diseñamos un embudo estricto de identidad, antecedentes penales y referencias cruzadas.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-balance-scale text-gold mt-1 flex-shrink-0"></i>
+              <span><strong>Dignidad y legalidad:</strong> Impulsamos contrataciones transparentes y en blanco para garantizar el respeto al personal y la total tranquilidad del empleador.</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-base sm:text-lg font-semibold text-amber-300 pt-3 border-t border-zinc-800/80">
+          Hoy, somos el nexo de confianza más sólido de Buenos Aires. Una agencia premium liderada por quien conoce el detalle del oficio y la exigencia de los hogares más exclusivos.
+        </p>
       </div>
 
     </div>
@@ -816,9 +868,10 @@
   </section>
 
   <!-- =========================================================================
-       6. MÓDULO "TRABAJÁ CON NOSOTROS" (SECCIÓN PARA CANDIDATAS/OS)
+       6. CONVOCATORIA DE PERSONAL (POSTULANTES / TRABAJÁ CON NOSOTROS)
        ========================================================================= -->
-  <section id="candidatas" class="py-20 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border-y border-zinc-800/80 relative">
+  <section id="postulantes" class="py-20 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border-y border-zinc-800/80 relative">
+    <div id="candidatas" class="sr-only"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -831,29 +884,29 @@
             ¿Buscás Trabajo como <span class="text-gold-gradient">Personal de Limpieza</span>?
           </h2>
           <p class="mt-4 text-zinc-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-            En Mónica Bridges dignificamos el trabajo doméstico y corporativo. Te conectamos con hogares y empresas de primer nivel que respetan la ley, ofrecen <strong class="text-white">contrato formal con aportes</strong>, salarios acordes a la exigencia y un trato humano y profesional.
+            En <strong>Mónica Bridges</strong> dignificamos el trabajo doméstico y corporativo. Te conectamos con hogares y empresas de primer nivel que respetan la ley, ofreciendo contratación formal con aportes, salarios acordes a la exigencia y un trato humano y profesional.
           </p>
 
-          <div class="mt-6 flex flex-wrap gap-4 text-xs text-zinc-300">
-            <div class="flex items-center gap-1.5">
-              <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
-              <span>100% Bajo Contrato Legal</span>
-            </div>
-            <div class="flex items-center gap-1.5">
-              <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
-              <span>Remuneración Justa y en Término</span>
-            </div>
-            <div class="flex items-center gap-1.5">
-              <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
-              <span>Acompañamiento y Capacitación Continua</span>
-            </div>
+          <div class="benefits-list mt-6 flex flex-wrap gap-4 text-xs text-zinc-300">
+            <span class="flex items-center gap-1.5">
+              <i class="fas fa-check text-gold"></i>
+              <span>100% Bajo contrato legal</span>
+            </span>
+            <span class="flex items-center gap-1.5">
+              <i class="fas fa-check text-gold"></i>
+              <span>Remuneración justa y en término</span>
+            </span>
+            <span class="flex items-center gap-1.5">
+              <i class="fas fa-check text-gold"></i>
+              <span>Acompañamiento y capacitación continua</span>
+            </span>
           </div>
         </div>
 
         <div class="lg:col-span-4 flex flex-col items-center lg:items-end gap-3">
-          <button data-open-candidate-modal class="btn-gold w-full sm:w-auto px-8 py-4 rounded-xl text-xs font-bold tracking-wider shadow-2xl">
-            <i data-lucide="send" class="w-4 h-4"></i>
-            <span>Postularme Ahora</span>
+          <button onclick="openCandidateModal()" data-open-candidate-modal class="btn-gold w-full sm:w-auto px-8 py-4 rounded-xl text-xs font-bold tracking-wider shadow-2xl">
+            <i class="fas fa-file-alt"></i>
+            <span>Postularme como Personal</span>
           </button>
           <span class="text-[11px] text-zinc-400 text-center lg:text-right">
             Selección permanente para CABA, Zona Norte y alrededores.
@@ -985,10 +1038,11 @@
             <h3>NAVEGACIÓN</h3>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Nuestra Historia</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nda">Acuerdos NDA</a></li>
-                <li><a href="#garantia">Garantía Escrita</a></li>
+                <li><a href="#garantias">Confidencialidad & Garantía</a></li>
                 <li><a href="#cotizador">Cotizador Online</a></li>
+                <li><a href="#postulantes">Convocatoria Personal</a></li>
                 <li><a href="#faq">Preguntas Frecuentes</a></li>
                 <li><a href="admin.html"><i class="fas fa-lock text-gold"></i> Acceso Admin</a></li>
             </ul>

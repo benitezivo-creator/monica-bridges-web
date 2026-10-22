@@ -1117,155 +1117,95 @@
         </p>
       </div>
 
-      <form id="candidate-form" class="space-y-4">
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Nombre Completo *</label>
-            <input type="text" id="cand-name" required placeholder="Tu nombre y apellido" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Edad</label>
-            <input type="number" id="cand-age" placeholder="Ej. 35" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Teléfono / WhatsApp *</label>
-            <input type="tel" id="cand-phone" name="phone" required placeholder="+54 9 11 ..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Correo Electrónico (Confirmación)</label>
-            <input type="email" id="cand-email" name="email" placeholder="tu@email.com" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Zona de Residencia *</label>
-            <input type="text" id="cand-zone" name="zone" required placeholder="Ej. San Isidro, Tigre, CABA..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-zinc-300 block mb-1">Años de Experiencia Comprobable</label>
-            <select id="cand-experience" name="experience" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-              <option value="1 a 2 años">1 a 2 años</option>
-              <option value="3 a 5 años" selected>3 a 5 años</option>
-              <option value="Más de 5 años">Más de 5 años</option>
-              <option value="Más de 10 años">Más de 10 años</option>
-            </select>
-          </div>
+      <!-- Formulario de Postulación Simplificado y Liviano -->
+      <form id="formPostulacion" class="space-y-4">
+        <div>
+          <label class="block text-xs sm:text-sm font-medium text-zinc-300 mb-1">Nombre Completo *</label>
+          <input type="text" id="fullName" required class="w-full px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" placeholder="Ej: María Gómez">
         </div>
 
         <div>
-          <label class="text-xs font-semibold text-zinc-300 block mb-1">Disponibilidad Horaria</label>
-          <select id="cand-availability" name="availability" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-            <option value="Jornada Completa con Retiro">Jornada Completa (Con retiro)</option>
-            <option value="Cama Adentro (Sin Retiro)">Cama Adentro (Sin retiro)</option>
-            <option value="Media Jornada">Media Jornada</option>
-            <option value="Días Específicos">Días específicos</option>
+          <label class="block text-xs sm:text-sm font-medium text-zinc-300 mb-1">Correo Electrónico</label>
+          <input type="email" id="email" class="w-full px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" placeholder="correo@ejemplo.com">
+        </div>
+
+        <div>
+          <label class="block text-xs sm:text-sm font-medium text-zinc-300 mb-1">Teléfono / WhatsApp *</label>
+          <input type="tel" id="phone" required class="w-full px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" placeholder="+54 9 11 ...">
+        </div>
+
+        <div>
+          <label class="block text-xs sm:text-sm font-medium text-zinc-300 mb-1">Especialidad</label>
+          <select id="specialty" class="w-full px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none">
+            <option value="Limpieza y Tareas Domésticas">Limpieza y Tareas Domésticas</option>
+            <option value="Cuidado de Adultos Mayores">Cuidado de Adultos Mayores</option>
+            <option value="Cuidado de Niños (Niñera)">Cuidado de Niños (Niñera)</option>
+            <option value="Cocina y Gastronomía">Cocina y Gastronomía</option>
           </select>
         </div>
 
-        <!-- Especialidad Principal (Dropdown) -->
         <div>
-          <label for="specialty" class="text-xs font-semibold text-zinc-300 block mb-1">Especialidad Principal *</label>
-          <select id="specialty" name="specialty" required class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-            <option value="" disabled selected>Seleccione una especialidad...</option>
-            <option value="Limpieza Residencial y Empresas">Limpieza Residencial y Empresas</option>
-            <option value="Cuidado de niños / Niñera">Cuidado de niños / Niñera</option>
-            <option value="Cuidado de adultos mayores">Cuidado de adultos mayores</option>
-            <option value="Manejo de personal">Manejo de personal</option>
-            <option value="Cocina y Protocolo">Cocina y Protocolo</option>
-            <option value="Mantenimiento General">Mantenimiento General</option>
-          </select>
+          <label class="block text-xs sm:text-sm font-medium text-zinc-300 mb-1">Experiencia y Referencias Breves</label>
+          <textarea id="experience" rows="3" class="w-full px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" placeholder="Describí brevemente tu experiencia laboral..."></textarea>
         </div>
 
-        <!-- Specialties Checkboxes -->
-        <div>
-          <label class="text-xs font-semibold text-zinc-300 block mb-1.5">Áreas de Experiencia Adicionales</label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Casas de familia" class="cand-spec-check text-amber-500 rounded" checked>
-              <span class="text-zinc-300">Casas de familia</span>
-            </label>
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Oficinas / Empresas" class="cand-spec-check text-amber-500 rounded">
-              <span class="text-zinc-300">Oficinas / Empresas</span>
-            </label>
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Cuidado de niños / Niñera" class="cand-spec-check text-amber-500 rounded">
-              <span class="text-zinc-300">Cuidado de niños / Niñera</span>
-            </label>
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Cuidado de adultos mayores" class="cand-spec-check text-amber-500 rounded">
-              <span class="text-zinc-300">Cuidado de adultos mayores</span>
-            </label>
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Manejo de personal" class="cand-spec-check text-amber-500 rounded">
-              <span class="text-zinc-300">Manejo de personal</span>
-            </label>
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Planchado y ropa fina" class="cand-spec-check text-amber-500 rounded" checked>
-              <span class="text-zinc-300">Planchado y ropa fina</span>
-            </label>
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Cocina y protocolo" class="cand-spec-check text-amber-500 rounded">
-              <span class="text-zinc-300">Cocina y protocolo</span>
-            </label>
-            <label class="flex items-center gap-2 p-2 rounded bg-zinc-900 border border-zinc-800">
-              <input type="checkbox" value="Mantenimiento general" class="cand-spec-check text-amber-500 rounded">
-              <span class="text-zinc-300">Mantenimiento general</span>
-            </label>
-          </div>
-        </div>
+        <button type="submit" id="btnSubmit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-3.5 px-6 rounded-xl transition duration-200 cursor-pointer shadow-lg uppercase tracking-wider text-xs">
+          Enviar Postulación
+        </button>
 
-        <!-- File Upload for CV -->
-        <div>
-          <label class="text-xs font-semibold text-zinc-300 block mb-1">
-            <i class="fas fa-file-pdf text-amber-400"></i> Adjuntar CV en PDF o Word (Para Google Drive)
-          </label>
-          <input type="file" id="cand-file" name="cvFile" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-amber-400/20 file:text-amber-300 hover:file:bg-amber-400/30">
-          <p class="text-[11px] text-zinc-400 mt-1">El documento se subirá automáticamente a la carpeta de Google Drive de Mónica Bridges.</p>
-        </div>
-
-        <div>
-          <label class="text-xs font-semibold text-zinc-300 block mb-1">Enlace a CV o Drive Alternativo (Opcional)</label>
-          <input type="url" id="cand-cv-link" placeholder="https://drive.google.com/..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none">
-        </div>
-
-        <div>
-          <label class="text-xs font-semibold text-zinc-300 block mb-1">Comentarios / Breve Presentación</label>
-          <textarea id="cand-notes" rows="2" placeholder="Contanos brevemente sobre tus trabajos anteriores..." class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none"></textarea>
-        </div>
-
-        <label class="flex items-start gap-2 pt-1 cursor-pointer">
-          <input type="checkbox" id="cand-references" checked class="mt-0.5 rounded text-amber-500">
-          <span class="text-[11px] text-zinc-400">
-            Poseo referencias laborales comprobables de empleadores anteriores y documentación al día.
-          </span>
-        </label>
-
-        <!-- Actions -->
-        <div class="pt-3 flex flex-col gap-2.5">
-          <button type="submit" id="candidate-submit-drive" class="w-full py-3 px-4 rounded-xl btn-gold text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg cursor-pointer">
-            <i class="fab fa-google-drive"></i>
-            <span id="btn-drive-text">Enviar Postulación (Google Drive & Sheets)</span>
+        <div class="pt-2 flex flex-col sm:flex-row gap-2">
+          <button type="button" id="candidate-submit-wa" class="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Enviar por WhatsApp</span>
           </button>
-          
-          <div class="flex flex-col sm:flex-row gap-2">
-            <button type="button" id="candidate-submit-wa" class="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              <span>Enviar por WhatsApp</span>
-            </button>
-            <button type="button" id="candidate-submit-email" class="sm:w-auto py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-              <i data-lucide="mail" class="w-4 h-4"></i>
-              <span>Enviar por Correo</span>
-            </button>
-          </div>
+          <button type="button" id="candidate-submit-email" class="sm:w-auto py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Enviar por Correo</span>
+          </button>
         </div>
-
       </form>
+
+      <script>
+        // URL de tu Webhook de Google Apps Script
+        const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxCylf83hWtQXv1KcEu5Pqz4tvX5xuxWWgSfVrV-XhYkpZbydkxZibBn65o0FdGlL0V/exec";
+
+        document.getElementById('formPostulacion').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const btn = document.getElementById('btnSubmit');
+          btn.disabled = true;
+          btn.textContent = "Enviando postulación...";
+
+          const payload = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            specialty: document.getElementById('specialty').value,
+            experience: document.getElementById('experience').value
+          };
+
+          try {
+            await fetch(WEBHOOK_URL, {
+              method: 'POST',
+              mode: 'no-cors', // Evita problemas de CORS con Google Apps Script
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+
+            alert('¡Postulación enviada con éxito! Nos pondremos en contacto pronto.');
+            document.getElementById('formPostulacion').reset();
+            if (typeof window.closeCandidateModal === 'function') {
+              window.closeCandidateModal();
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('Hubo un error al enviar tus datos. Por favor, intentalo de nuevo.');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = "Enviar Postulación";
+          }
+        });
+      </script>
     </div>
   </div>
 

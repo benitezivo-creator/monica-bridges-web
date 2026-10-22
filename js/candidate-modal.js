@@ -236,19 +236,19 @@ ${data.additionalNotes ? `Notas adicionales: ${data.additionalNotes}\n` : ''}
     const age = document.getElementById('cand-age')?.value.trim();
     const phone = document.getElementById('cand-phone')?.value.trim() || document.getElementById('phone')?.value.trim();
     const email = document.getElementById('cand-email')?.value.trim() || document.getElementById('email')?.value.trim();
-    const zone = document.getElementById('cand-zone')?.value.trim();
-    const specialty = document.getElementById('specialty')?.value || document.getElementById('cand-specialty')?.value || '';
+    const zone = document.getElementById('cand-zone')?.value.trim() || 'A coordinar';
+    const specialty = document.getElementById('specialty')?.value || document.getElementById('cand-specialty')?.value || 'Limpieza y Tareas Domésticas';
     const documentation = document.getElementById('cand-doc')?.value.trim() || 'DNI vigente';
-    const experienceYears = document.getElementById('cand-experience')?.value || document.getElementById('experience')?.value || '3 a 5 años';
+    const experienceYears = document.getElementById('experience')?.value.trim() || document.getElementById('cand-experience')?.value || 'Experiencia comprobable';
     const availability = document.getElementById('cand-availability')?.value || 'Jornada Completa';
     const cvLink = document.getElementById('cand-cv-link')?.value.trim();
-    const additionalNotes = document.getElementById('cand-notes')?.value.trim();
-    const hasReferences = document.getElementById('cand-references')?.checked;
+    const additionalNotes = document.getElementById('experience')?.value.trim() || document.getElementById('cand-notes')?.value.trim();
+    const hasReferences = document.getElementById('cand-references')?.checked ?? true;
 
     // Specialties checked
     const specElements = document.querySelectorAll('.cand-spec-check:checked');
     const specs = Array.from(specElements).map(el => el.value);
-    const specialties = specs.length > 0 ? specs.join(', ') : 'Casas de familia y oficinas';
+    const specialties = specs.length > 0 ? specs.join(', ') : specialty;
 
     if (!fullName) {
       if (window.mbToast) window.mbToast('Por favor, ingresá tu nombre completo.');
@@ -258,11 +258,6 @@ ${data.additionalNotes ? `Notas adicionales: ${data.additionalNotes}\n` : ''}
     if (!phone) {
       if (window.mbToast) window.mbToast('Por favor, ingresá tu teléfono o WhatsApp.');
       (document.getElementById('cand-phone') || document.getElementById('phone'))?.focus();
-      return null;
-    }
-    if (!zone) {
-      if (window.mbToast) window.mbToast('Por favor, indicanos tu zona de residencia.');
-      document.getElementById('cand-zone')?.focus();
       return null;
     }
 

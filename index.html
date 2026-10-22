@@ -1149,25 +1149,22 @@
           <textarea id="experience" rows="3" class="w-full px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" placeholder="Describí brevemente tu experiencia laboral..."></textarea>
         </div>
 
+        <div>
+          <label class="block text-xs sm:text-sm font-medium text-zinc-300 mb-1">
+            <i class="fas fa-file-pdf text-amber-400 mr-1"></i> Adjuntar CV en PDF o Word (Opcional)
+          </label>
+          <input type="file" id="cvFile" accept=".pdf,.doc,.docx" class="w-full px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-xs focus:border-amber-400 focus:outline-none file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-amber-400/20 file:text-amber-300 hover:file:bg-amber-400/30">
+          <p class="text-[11px] text-zinc-400 mt-1">El archivo se guardará automáticamente en Google Drive de Mónica Bridges.</p>
+        </div>
+
         <button type="submit" id="btnSubmit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-3.5 px-6 rounded-xl transition duration-200 cursor-pointer shadow-lg uppercase tracking-wider text-xs">
           Enviar Postulación
         </button>
-
-        <div class="pt-2 flex flex-col sm:flex-row gap-2">
-          <button type="button" id="candidate-submit-wa" class="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>Enviar por WhatsApp</span>
-          </button>
-          <button type="button" id="candidate-submit-email" class="sm:w-auto py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-            <span>Enviar por Correo</span>
-          </button>
-        </div>
       </form>
 
       <script>
         // URL de tu Webhook de Google Apps Script
-        const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxCylf83hWtQXv1KcEu5Pqz4tvX5xuxWWgSfVrV-XhYkpZbydkxZibBn65o0FdGlL0V/exec";
+        const WEBHOOK_URL = localStorage.getItem('mb_webhook_url') || "https://script.google.com/macros/s/AKfycbxCylf83hWtQXv1KcEu5Pqz4tvX5xuxWWgSfVrV-XhYkpZbydkxZibBn65o0FdGlL0V/exec";
 
         document.getElementById('formPostulacion').addEventListener('submit', async function(e) {
           e.preventDefault();
@@ -1176,33 +1173,56 @@
           btn.disabled = true;
           btn.textContent = "Enviando postulación...";
 
-          const payload = {
-            fullName: document.getElementById('fullName').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            specialty: document.getElementById('specialty').value,
-            experience: document.getElementById('experience').value
+          const fileInput = document.getElementById('cvFile');
+          const file = fileInput?.files?.[0];
+
+          const sendData = async (fileData = '', fileName = '', fileMimeType = '') => {
+            const payload = {
+              fullName: document.getElementById('fullName').value,
+              email: document.getElementById('email').value,
+              phone: document.getElementById('phone').value,
+              specialty: document.getElementById('specialty').value,
+              experience: document.getElementById('experience').value,
+              fileData: fileData,
+              fileName: fileName,
+              fileMimeType: fileMimeType
+            };
+
+            try {
+              await fetch(WEBHOOK_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Evita problemas de CORS con Google Apps Script
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+
+              alert('¡Postulación enviada con éxito! Tus datos y CV han sido registrados correctamente en el sistema.');
+              document.getElementById('formPostulacion').reset();
+              if (typeof window.closeCandidateModal === 'function') {
+                window.closeCandidateModal();
+              }
+            } catch (error) {
+              console.error('Error:', error);
+              alert('Hubo un error al enviar tus datos. Por favor, intentalo de nuevo.');
+            } finally {
+              btn.disabled = false;
+              btn.textContent = "Enviar Postulación";
+            }
           };
 
-          try {
-            await fetch(WEBHOOK_URL, {
-              method: 'POST',
-              mode: 'no-cors', // Evita problemas de CORS con Google Apps Script
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload)
-            });
-
-            alert('¡Postulación enviada con éxito! Nos pondremos en contacto pronto.');
-            document.getElementById('formPostulacion').reset();
-            if (typeof window.closeCandidateModal === 'function') {
-              window.closeCandidateModal();
-            }
-          } catch (error) {
-            console.error('Error:', error);
-            alert('Hubo un error al enviar tus datos. Por favor, intentalo de nuevo.');
-          } finally {
-            btn.disabled = false;
-            btn.textContent = "Enviar Postulación";
+          if (file) {
+            btn.textContent = "Procesando CV y enviando...";
+            const reader = new FileReader();
+            reader.onload = async function() {
+              await sendData(reader.result, file.name, file.type || 'application/pdf');
+            };
+            reader.onerror = async function() {
+              alert('No se pudo leer el archivo adjunto. Enviando postulación sin archivo...');
+              await sendData('', '', '');
+            };
+            reader.readAsDataURL(file);
+          } else {
+            await sendData('', '', '');
           }
         });
       </script>

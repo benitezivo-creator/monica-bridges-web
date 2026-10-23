@@ -1158,13 +1158,21 @@
         </div>
 
         <button type="submit" id="btnSubmit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-3.5 px-6 rounded-xl transition duration-200 cursor-pointer shadow-lg uppercase tracking-wider text-xs">
-          Enviar Postulación
+          ENVIAR POSTULACIÓN
         </button>
       </form>
 
       <script>
-        // URL de tu Webhook de Google Apps Script
         const WEBHOOK_URL = localStorage.getItem('mb_webhook_url') || "https://script.google.com/macros/s/AKfycbxCylf83hWtQXv1KcEu5Pqz4tvX5xuxWWgSfVrV-XhYkpZbydkxZibBn65o0FdGlL0V/exec";
+
+        function getBase64(file) {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+          });
+        }
 
         document.getElementById('formPostulacion').addEventListener('submit', async function(e) {
           e.preventDefault();
@@ -1174,55 +1182,52 @@
           btn.textContent = "Enviando postulación...";
 
           const fileInput = document.getElementById('cvFile');
-          const file = fileInput?.files?.[0];
+          let fileData = "";
+          let fileName = "";
 
-          const sendData = async (fileData = '', fileName = '', fileMimeType = '') => {
-            const payload = {
-              fullName: document.getElementById('fullName').value,
-              email: document.getElementById('email').value,
-              phone: document.getElementById('phone').value,
-              specialty: document.getElementById('specialty').value,
-              experience: document.getElementById('experience').value,
-              fileData: fileData,
-              fileName: fileName,
-              fileMimeType: fileMimeType
-            };
-
-            try {
-              await fetch(WEBHOOK_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Evita problemas de CORS con Google Apps Script
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-              });
-
-              alert('¡Postulación enviada con éxito! Tus datos y CV han sido registrados correctamente en el sistema.');
-              document.getElementById('formPostulacion').reset();
-              if (typeof window.closeCandidateModal === 'function') {
-                window.closeCandidateModal();
-              }
-            } catch (error) {
-              console.error('Error:', error);
-              alert('Hubo un error al enviar tus datos. Por favor, intentalo de nuevo.');
-            } finally {
+          if (fileInput && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            
+            if (file.size > 4 * 1024 * 1024) {
+              alert("El archivo supera el límite permitido de 4MB. Adjunta un PDF o Word más liviano.");
               btn.disabled = false;
-              btn.textContent = "Enviar Postulación";
+              btn.textContent = "ENVIAR POSTULACIÓN";
+              return;
             }
+            
+            fileName = file.name;
+            fileData = await getBase64(file);
+          }
+
+          const payload = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            specialty: document.getElementById('specialty').value,
+            experience: document.getElementById('experience').value,
+            fileData: fileData,
+            fileName: fileName
           };
 
-          if (file) {
-            btn.textContent = "Procesando CV y enviando...";
-            const reader = new FileReader();
-            reader.onload = async function() {
-              await sendData(reader.result, file.name, file.type || 'application/pdf');
-            };
-            reader.onerror = async function() {
-              alert('No se pudo leer el archivo adjunto. Enviando postulación sin archivo...');
-              await sendData('', '', '');
-            };
-            reader.readAsDataURL(file);
-          } else {
-            await sendData('', '', '');
+          try {
+            await fetch(WEBHOOK_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+
+            alert('¡Postulación enviada con éxito! Nos pondremos en contacto a la brevedad.');
+            document.getElementById('formPostulacion').reset();
+            if (typeof window.closeCandidateModal === 'function') {
+              window.closeCandidateModal();
+            }
+          } catch (error) {
+            console.error('Error al enviar:', error);
+            alert('Ocurrió un error al enviar la postulación. Por favor inténtalo nuevamente.');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = "ENVIAR POSTULACIÓN";
           }
         });
       </script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,35 +9,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body style="background-color: var(--bg-dark); color: var(--text-secondary); min-height: 100vh;">
 
     <div class="admin-wrapper" style="max-width: 850px; margin: 50px auto; padding: 20px;">
-        
+
         <!-- Header del Panel -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid var(--border-gold); padding-bottom: 15px;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid var(--border-gold); padding-bottom: 15px;">
             <div>
-                <h1 style="font-size: 1.8rem; color: var(--gold-primary); margin: 0; font-family: var(--font-heading);">MÓNICA BRIDGES</h1>
-                <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Plataforma de Reclutamiento — Centro de Control</p>
+                <h1 style="font-size: 1.8rem; color: var(--gold-primary); margin: 0; font-family: var(--font-heading);">
+                    MÓNICA BRIDGES</h1>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Plataforma de Reclutamiento — Centro
+                    de Control</p>
             </div>
-            <a href="index.html" style="color: var(--gold-primary); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px;">
+            <a href="index.html"
+                style="color: var(--gold-primary); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fas fa-arrow-left"></i> Volver al Sitio Web
             </a>
         </div>
 
         <!-- PANTALLA DE LOGIN -->
         <div id="loginSection" class="card" style="max-width: 450px; margin: 40px auto; text-align: center;">
-            <i class="fas fa-user-shield" style="font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 15px;"></i>
+            <i class="fas fa-user-shield"
+                style="font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 15px;"></i>
             <h2 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">Acceso a Gestión</h2>
-            <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-muted);">Ingrese sus credenciales de administrador o superusuario</p>
-            
+            <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-muted);">Ingrese sus credenciales de
+                administrador o superusuario</p>
+
             <form onsubmit="event.preventDefault(); handleLogin();">
                 <div class="form-group" style="text-align: left;">
                     <label for="adminUser">Usuario</label>
                     <input type="text" id="adminUser" placeholder="Ej: moni o admin" required>
                 </div>
-                
+
                 <div class="form-group" style="text-align: left;">
                     <label for="adminPass">Contraseña</label>
                     <input type="password" id="adminPass" placeholder="••••••••" required>
@@ -50,51 +60,63 @@
 
         <!-- PANEL DE CONTROL AUTENTICADO -->
         <div id="dashboardSection" style="display: none;">
-            
+
             <!-- Barra de Perfil -->
-            <div class="card" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 15px 25px; flex-wrap: wrap; gap: 12px;">
+            <div class="card"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 15px 25px; flex-wrap: wrap; gap: 12px;">
                 <div>
-                    <span style="font-size: 0.9rem;">Sesión activa: <strong id="userDisplayName" style="color: #fff;">-</strong></span>
+                    <span style="font-size: 0.9rem;">Sesión activa: <strong id="userDisplayName"
+                            style="color: #fff;">-</strong></span>
                     <span id="roleBadge" class="badge-role" style="margin-left: 10px;">-</span>
                 </div>
-                <button onclick="handleLogout()" style="background: transparent; border: 1px solid var(--border-gold); color: var(--gold-primary); padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">
+                <button onclick="handleLogout()"
+                    style="background: transparent; border: 1px solid var(--border-gold); color: var(--gold-primary); padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">
                     <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
                 </button>
             </div>
 
             <!-- MÓDULO 1: Vinculación con Google Workspace (Para Moni y Superusuario) -->
             <div class="card" style="margin-bottom: 25px;">
-                <h3 style="color: var(--gold-primary); display: flex; align-items: center; gap: 10px; font-size: 1.2rem; margin-bottom: 12px;">
+                <h3
+                    style="color: var(--gold-primary); display: flex; align-items: center; gap: 10px; font-size: 1.2rem; margin-bottom: 12px;">
                     <i class="fab fa-google-drive"></i> Integración con Google Drive & Google Sheets
                 </h3>
                 <p style="font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">
-                    Conecte la cuenta de Google donde se volcarán automáticamente las postulaciones recibidas y se crearán las carpetas con los CVs adjuntos.
+                    Conecte la cuenta de Google donde se volcarán automáticamente las postulaciones recibidas y se
+                    crearán las carpetas con los CVs adjuntos.
                 </p>
 
-                <div style="background: rgba(0,0,0,0.5); padding: 20px; border-radius: 8px; border: 1px solid var(--border-gold);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <div
+                    style="background: rgba(0,0,0,0.5); padding: 20px; border-radius: 8px; border: 1px solid var(--border-gold);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                         <div>
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Cuenta vinculada actualmente:</p>
-                            <strong id="connectedAccount" style="color: #fff; font-size: 1rem;">Ninguna cuenta vinculada</strong>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Cuenta vinculada
+                                actualmente:</p>
+                            <strong id="connectedAccount" style="color: #fff; font-size: 1rem;">Ninguna cuenta
+                                vinculada</strong>
                         </div>
-                        <button id="btnConnectGoogle" onclick="connectGoogleAccount()" class="btn-gold" style="display: inline-flex; align-items: center; gap: 10px;">
+                        <button id="btnConnectGoogle" onclick="connectGoogleAccount()" class="btn-gold"
+                            style="display: inline-flex; align-items: center; gap: 10px;">
                             <i class="fab fa-google"></i> Conectar Cuenta de Google
                         </button>
                     </div>
                 </div>
 
                 <div style="margin-top: 20px;">
-                    <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 8px;">Estados de Gestión de Candidatos en la Planilla:</h4>
+                    <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 8px;">Estados de Gestión de Candidatos en
+                        la Planilla:</h4>
                     <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.5;">
                         Los registros creados en su Google Sheet incluirán una columna interactiva con las etiquetas:
-                        <strong style="color: #f1c40f;">En revisión</strong>, 
-                        <strong style="color: #2ecc71;">Referencias OK</strong> y 
+                        <strong style="color: #f1c40f;">En revisión</strong>,
+                        <strong style="color: #2ecc71;">Referencias OK</strong> y
                         <strong style="color: #e74c3c;">RECHAZADO</strong>.
                     </p>
                 </div>
 
                 <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
-                    <a href="google-apps-script/INSTRUCCIONES.md" target="_blank" style="color: var(--gold-primary); font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <a href="google-apps-script/INSTRUCCIONES.md" target="_blank"
+                        style="color: var(--gold-primary); font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                         <i class="fas fa-book"></i> Ver instrucciones paso a paso para Google Apps Script
                     </a>
                 </div>
@@ -102,22 +124,28 @@
 
             <!-- MÓDULO 2: Panel Exclusivo de Superusuario (Ajustes Avanzados) -->
             <div id="superuserPanel" class="card" style="display: none; border-color: rgba(231, 76, 60, 0.4);">
-                <h3 style="color: #e74c3c; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; margin-bottom: 10px;">
+                <h3
+                    style="color: #e74c3c; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; margin-bottom: 10px;">
                     <i class="fas fa-user-cog"></i> Configuración de Superusuario
                 </h3>
-                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted);">Acceso técnico avanzado para ajustar Webhooks, credenciales del sistema y plantillas de correo.</p>
+                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted);">Acceso técnico avanzado
+                    para ajustar Webhooks, credenciales del sistema y plantillas de correo.</p>
 
                 <div class="form-group">
                     <label for="webhookUrl">URL Webhook / Endpoint de Producción (Apps Script / Make)</label>
-                    <input type="text" id="webhookUrl" value="https://script.google.com/macros/s/AKfycbza6FtONnm8FHsbq1TuVaTfZT4qYhA_-z2bolw5uReT8FLlQ4Uh5oklPrNk-y99SiGi3Q/exec" placeholder="https://...">
+                    <input type="text" id="webhookUrl"
+                        value="https://script.google.com/macros/s/AKfycbzzJfSl3o_6saBySGPQmyI5YvGoVM_CUvlTlGnxanuvgXV5xsW-LoELIW74CCIV_BGW/exec"
+                        placeholder="https://...">
                 </div>
 
                 <div class="form-group">
                     <label for="autoReplyMsg">Plantilla de Respuesta Automática a Candidatas</label>
-                    <textarea id="autoReplyMsg" rows="3">Hola {nombre}, hemos recibido tu postulación correctamente. Nuestro equipo revisará tus datos y referencias a la brevedad.</textarea>
+                    <textarea id="autoReplyMsg"
+                        rows="3">Hola {nombre}, hemos recibido tu postulación correctamente. Nuestro equipo revisará tus datos y referencias a la brevedad.</textarea>
                 </div>
 
-                <button onclick="saveSuperuserSettings()" class="btn-gold" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff !important;">
+                <button onclick="saveSuperuserSettings()" class="btn-gold"
+                    style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff !important;">
                     <i class="fas fa-save"></i> Guardar Configuración Avanzada
                 </button>
             </div>
@@ -151,9 +179,9 @@
         function renderDashboard(session) {
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('dashboardSection').style.display = 'block';
-            
+
             document.getElementById('userDisplayName').innerText = session.username.toUpperCase();
-            
+
             const badge = document.getElementById('roleBadge');
             badge.innerText = session.role;
             badge.className = 'badge-role ' + (session.isSuper ? 'badge-superuser' : 'badge-moni');
@@ -203,7 +231,7 @@
         }
 
         // Cargar estado guardado al iniciar sesión
-        window.onload = function() {
+        window.onload = function () {
             var savedSession = localStorage.getItem('mb_admin_session');
             if (savedSession) {
                 renderDashboard(JSON.parse(savedSession));
@@ -227,4 +255,5 @@
         };
     </script>
 </body>
+
 </html>
